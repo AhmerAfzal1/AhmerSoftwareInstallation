@@ -1,6 +1,6 @@
 ﻿namespace Ahmer_Silent_Software_Install_Program_GUI
 {
-    partial class Form1
+    partial class MainProgram
     {
         /// <summary>
         /// Required designer variable.
