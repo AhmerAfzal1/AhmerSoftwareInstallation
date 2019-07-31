@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Security;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using Ionic.Zip;
 
@@ -34,13 +30,12 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         private static Label programFileLabel = null;
         private static Label tempFolderLabel = null;
 
-        private static ProgressBar individual = null;
-        private static ProgressBar total = null;
+        private static string newPath = null;
+        private static string arguments = null;
 
         public MainProgram()
         {
             InitializeComponent();
-
             labelSoftwareCategory.Text = "";
             this.ahmerUC1.BringToFront();
 
@@ -58,9 +53,6 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             tempFolderLabel = labelShowDestination;
             tempFolderLabel.Text = Constants.TempFolder;
             programFileLabel = labelShowProgramFile;
-
-            individual = progressBarIndividual;
-            total = progressBarTotal;
 
             progressBarIndividual.Maximum = int.MaxValue;
             progressBarTotal.Maximum = int.MaxValue;
@@ -130,7 +122,39 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         {
             progressBarIndividual.Value = int.MaxValue;
             progressBarTotal.Value = int.MaxValue;
-            Constants.MessageBoxInformation("Extraction completed!");
+            //Constants.MessageBoxInformation("Extraction completed!");
+            try
+            {
+                using (Process exeFile = new Process())
+                {
+                    exeFile.StartInfo.FileName = newPath;
+                    exeFile.StartInfo.Arguments = arguments;
+                    exeFile.StartInfo.Verb = "runas";
+                    exeFile.StartInfo.UseShellExecute = true;
+                    exeFile.Start();
+                    exeFile.WaitForExit();
+                }
+            }
+            catch (InvalidOperationException i)
+            {
+                Constants.MessageBoxException("InvalidOperationException: " + i.Message);
+            }
+            catch (ArgumentNullException a)
+            {
+                Constants.MessageBoxException("ArgumentNullException: " + a.Message);
+            }
+            catch (PlatformNotSupportedException p)
+            {
+                Constants.MessageBoxException("PlatformNotSupportedException: " + p.Message);
+            }
+            catch (FileNotFoundException f)
+            {
+                Constants.MessageBoxException("FileNotFoundException: " + f.Message);
+            }
+            catch (Win32Exception ex)
+            {
+                Constants.MessageBoxException("Win32Exception: " + ex.Message);
+            }
         }
 
         private void ExtractFile_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -217,8 +241,10 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             }
         }
 
-        public static void ProgressAsync()
+        public static void ProgressAsync(string path, string argument = null)
         {
+            newPath = path;
+            arguments = argument;
             extractFile.RunWorkerAsync();
         }
     }

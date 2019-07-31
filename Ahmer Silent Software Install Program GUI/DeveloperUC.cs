@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Threading;
 
 namespace Ahmer_Silent_Software_Install_Program_GUI
 {
@@ -34,15 +29,24 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         private void ButtonJavaJDK8_Click(object sender, EventArgs e)
         {
             string address = "D:\\Softwares\\Java 8 Update 171.zip";
+            string setup = Constants.TempFolder + "Java 8 Update 171\\Setup.exe";
             MainProgram.GetSetShowProgramFile = address;
-            MainProgram.ProgressAsync();
+            MainProgram.ProgressAsync(setup, null);
+            /*
+            Thread.Sleep(1000);
+            if (File.Exists(setup))
+            {
+                
+            }*/
         }
 
         private void ButtonJavaJDK12_Click(object sender, EventArgs e)
         {
+            /*
             string address = "D:\\New.zip";
             MainProgram.GetSetShowProgramFile = address;
             MainProgram.ProgressAsync();
+            */
         }
     }
 }

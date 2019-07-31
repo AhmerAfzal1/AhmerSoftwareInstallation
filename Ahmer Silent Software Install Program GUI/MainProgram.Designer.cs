@@ -393,7 +393,7 @@
             // labelSoftwareCategory
             // 
             this.labelSoftwareCategory.BackColor = System.Drawing.Color.Coral;
-            this.labelSoftwareCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSoftwareCategory.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSoftwareCategory.ForeColor = System.Drawing.Color.White;
             this.labelSoftwareCategory.Location = new System.Drawing.Point(0, 2);
             this.labelSoftwareCategory.Name = "labelSoftwareCategory";
