@@ -35,6 +35,14 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         {
             string address = "D:\\Softwares\\Java 8 Update 171.zip";
             MainProgram.GetSetShowProgramFile = address;
+            MainProgram.ProgressAsync();
+        }
+
+        private void ButtonJavaJDK12_Click(object sender, EventArgs e)
+        {
+            string address = "D:\\New.zip";
+            MainProgram.GetSetShowProgramFile = address;
+            MainProgram.ProgressAsync();
         }
     }
 }

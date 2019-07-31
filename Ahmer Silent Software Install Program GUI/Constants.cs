@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Windows.Forms;
 
 namespace Ahmer_Silent_Software_Install_Program_GUI
 {
@@ -13,6 +14,17 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         {
             get => tempFolder;
             set => tempFolder = value;
+        }
+
+        // MessageBox
+        public static void MessageBoxInformation(string s)
+        {
+            MessageBox.Show(s, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public static void MessageBoxException(string s)
+        {
+            MessageBox.Show(s, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

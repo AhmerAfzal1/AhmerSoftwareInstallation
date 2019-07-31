@@ -66,6 +66,7 @@
             this.buttonJavaJDK12.TabIndex = 1;
             this.buttonJavaJDK12.Text = "button";
             this.buttonJavaJDK12.UseVisualStyleBackColor = false;
+            this.buttonJavaJDK12.Click += new System.EventHandler(this.ButtonJavaJDK12_Click);
             // 
             // buttonAndroidStudio
             // 
