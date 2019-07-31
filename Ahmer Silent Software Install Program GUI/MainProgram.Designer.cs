@@ -37,7 +37,10 @@
             this.buttonInternet = new System.Windows.Forms.Button();
             this.buttonDeveloper = new System.Windows.Forms.Button();
             this.buttonAutoInstall = new System.Windows.Forms.Button();
+            this.panelTop = new System.Windows.Forms.Panel();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.panelLeftSide.SuspendLayout();
+            this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLeftSide
@@ -193,19 +196,42 @@
             this.buttonAutoInstall.Text = "button1";
             this.buttonAutoInstall.UseVisualStyleBackColor = false;
             // 
+            // panelTop
+            // 
+            this.panelTop.BackColor = System.Drawing.Color.LightCoral;
+            this.panelTop.Controls.Add(this.labelTitle);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.Location = new System.Drawing.Point(200, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(984, 100);
+            this.panelTop.TabIndex = 1;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(5, 5);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(975, 90);
+            this.labelTitle.TabIndex = 0;
+            this.labelTitle.Text = "label1";
+            this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainProgram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Coral;
             this.ClientSize = new System.Drawing.Size(1184, 812);
+            this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelLeftSide);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainProgram";
             this.Text = "Ahmer\'s Automatically And Silently Softwares Installation Program GUI";
             this.panelLeftSide.ResumeLayout(false);
+            this.panelTop.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -221,6 +247,8 @@
         private System.Windows.Forms.Button buttonMajor;
         private System.Windows.Forms.Button buttonInternet;
         private System.Windows.Forms.Button buttonDeveloper;
+        private System.Windows.Forms.Panel panelTop;
+        private System.Windows.Forms.Label labelTitle;
     }
 }
 

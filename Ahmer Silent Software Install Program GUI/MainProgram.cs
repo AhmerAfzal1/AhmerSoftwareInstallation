@@ -25,6 +25,7 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         public MainProgram()
         {
             InitializeComponent();
+
             buttonAutoInstall.Text = button1;
             buttonDeveloper.Text = button2;
             buttonInternet.Text = button3;
@@ -33,6 +34,8 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             buttonMultimedia.Text = button6;
             buttonPDF.Text = button7;
             buttonUtilities.Text = button8;
+
+            labelTitle.Text = titleHeading;
         }
     }
 }
