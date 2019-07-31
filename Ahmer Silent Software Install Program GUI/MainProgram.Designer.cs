@@ -52,6 +52,10 @@
             this.labelProgramFile = new System.Windows.Forms.Label();
             this.panelAhmerSoftwareCategories = new System.Windows.Forms.Panel();
             this.labelSoftwareCategory = new System.Windows.Forms.Label();
+            this.buttonAhmer = new System.Windows.Forms.Button();
+            this.majorUC1 = new Ahmer_Silent_Software_Install_Program_GUI.MajorUC();
+            this.internetUC1 = new Ahmer_Silent_Software_Install_Program_GUI.InternetUC();
+            this.ahmerUC1 = new Ahmer_Silent_Software_Install_Program_GUI.AhmerUC();
             this.developerUC1 = new Ahmer_Silent_Software_Install_Program_GUI.DeveloperUC();
             this.panelLeftSide.SuspendLayout();
             this.panelTop.SuspendLayout();
@@ -63,6 +67,7 @@
             // 
             this.panelLeftSide.BackColor = System.Drawing.Color.DarkSalmon;
             this.panelLeftSide.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelLeftSide.Controls.Add(this.buttonAhmer);
             this.panelLeftSide.Controls.Add(this.buttonUtilities);
             this.panelLeftSide.Controls.Add(this.buttonPDF);
             this.panelLeftSide.Controls.Add(this.buttonMultimedia);
@@ -87,7 +92,7 @@
             this.buttonUtilities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUtilities.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUtilities.ForeColor = System.Drawing.Color.Black;
-            this.buttonUtilities.Location = new System.Drawing.Point(3, 674);
+            this.buttonUtilities.Location = new System.Drawing.Point(3, 657);
             this.buttonUtilities.Name = "buttonUtilities";
             this.buttonUtilities.Size = new System.Drawing.Size(190, 70);
             this.buttonUtilities.TabIndex = 7;
@@ -104,7 +109,7 @@
             this.buttonPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPDF.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPDF.ForeColor = System.Drawing.Color.Black;
-            this.buttonPDF.Location = new System.Drawing.Point(3, 587);
+            this.buttonPDF.Location = new System.Drawing.Point(3, 570);
             this.buttonPDF.Name = "buttonPDF";
             this.buttonPDF.Size = new System.Drawing.Size(190, 70);
             this.buttonPDF.TabIndex = 6;
@@ -121,7 +126,7 @@
             this.buttonMultimedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMultimedia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMultimedia.ForeColor = System.Drawing.Color.Black;
-            this.buttonMultimedia.Location = new System.Drawing.Point(3, 500);
+            this.buttonMultimedia.Location = new System.Drawing.Point(3, 483);
             this.buttonMultimedia.Name = "buttonMultimedia";
             this.buttonMultimedia.Size = new System.Drawing.Size(190, 70);
             this.buttonMultimedia.TabIndex = 5;
@@ -138,7 +143,7 @@
             this.buttonMobile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMobile.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMobile.ForeColor = System.Drawing.Color.Black;
-            this.buttonMobile.Location = new System.Drawing.Point(3, 413);
+            this.buttonMobile.Location = new System.Drawing.Point(3, 396);
             this.buttonMobile.Name = "buttonMobile";
             this.buttonMobile.Size = new System.Drawing.Size(190, 70);
             this.buttonMobile.TabIndex = 4;
@@ -155,12 +160,13 @@
             this.buttonMajor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMajor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMajor.ForeColor = System.Drawing.Color.Black;
-            this.buttonMajor.Location = new System.Drawing.Point(3, 326);
+            this.buttonMajor.Location = new System.Drawing.Point(3, 309);
             this.buttonMajor.Name = "buttonMajor";
             this.buttonMajor.Size = new System.Drawing.Size(190, 70);
             this.buttonMajor.TabIndex = 3;
             this.buttonMajor.Text = "button1";
             this.buttonMajor.UseVisualStyleBackColor = false;
+            this.buttonMajor.Click += new System.EventHandler(this.ButtonMajor_Click);
             // 
             // buttonInternet
             // 
@@ -172,12 +178,13 @@
             this.buttonInternet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInternet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonInternet.ForeColor = System.Drawing.Color.Black;
-            this.buttonInternet.Location = new System.Drawing.Point(3, 239);
+            this.buttonInternet.Location = new System.Drawing.Point(3, 222);
             this.buttonInternet.Name = "buttonInternet";
             this.buttonInternet.Size = new System.Drawing.Size(190, 70);
             this.buttonInternet.TabIndex = 2;
             this.buttonInternet.Text = "button1";
             this.buttonInternet.UseVisualStyleBackColor = false;
+            this.buttonInternet.Click += new System.EventHandler(this.ButtonInternet_Click);
             // 
             // buttonDeveloper
             // 
@@ -189,7 +196,7 @@
             this.buttonDeveloper.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeveloper.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeveloper.ForeColor = System.Drawing.Color.Black;
-            this.buttonDeveloper.Location = new System.Drawing.Point(3, 152);
+            this.buttonDeveloper.Location = new System.Drawing.Point(3, 135);
             this.buttonDeveloper.Name = "buttonDeveloper";
             this.buttonDeveloper.Size = new System.Drawing.Size(190, 70);
             this.buttonDeveloper.TabIndex = 1;
@@ -207,7 +214,7 @@
             this.buttonAutoInstall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAutoInstall.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAutoInstall.ForeColor = System.Drawing.Color.Black;
-            this.buttonAutoInstall.Location = new System.Drawing.Point(3, 65);
+            this.buttonAutoInstall.Location = new System.Drawing.Point(3, 48);
             this.buttonAutoInstall.Name = "buttonAutoInstall";
             this.buttonAutoInstall.Size = new System.Drawing.Size(190, 70);
             this.buttonAutoInstall.TabIndex = 0;
@@ -370,6 +377,50 @@
             this.labelSoftwareCategory.Text = "Ahmer Software Categories";
             this.labelSoftwareCategory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // buttonAhmer
+            // 
+            this.buttonAhmer.BackColor = System.Drawing.Color.SpringGreen;
+            this.buttonAhmer.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonAhmer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
+            this.buttonAhmer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSpringGreen;
+            this.buttonAhmer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAhmer.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAhmer.ForeColor = System.Drawing.Color.Black;
+            this.buttonAhmer.Location = new System.Drawing.Point(5, 778);
+            this.buttonAhmer.Name = "buttonAhmer";
+            this.buttonAhmer.Size = new System.Drawing.Size(25, 25);
+            this.buttonAhmer.TabIndex = 8;
+            this.buttonAhmer.Text = "i";
+            this.buttonAhmer.UseVisualStyleBackColor = false;
+            this.buttonAhmer.Click += new System.EventHandler(this.ButtonAhmer_Click);
+            // 
+            // majorUC1
+            // 
+            this.majorUC1.BackColor = System.Drawing.Color.Coral;
+            this.majorUC1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.majorUC1.Location = new System.Drawing.Point(200, 115);
+            this.majorUC1.Name = "majorUC1";
+            this.majorUC1.Size = new System.Drawing.Size(984, 527);
+            this.majorUC1.TabIndex = 7;
+            // 
+            // internetUC1
+            // 
+            this.internetUC1.BackColor = System.Drawing.Color.Coral;
+            this.internetUC1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.internetUC1.Location = new System.Drawing.Point(200, 115);
+            this.internetUC1.Name = "internetUC1";
+            this.internetUC1.Size = new System.Drawing.Size(984, 527);
+            this.internetUC1.TabIndex = 6;
+            // 
+            // ahmerUC1
+            // 
+            this.ahmerUC1.BackColor = System.Drawing.Color.Coral;
+            this.ahmerUC1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ahmerUC1.Location = new System.Drawing.Point(200, 115);
+            this.ahmerUC1.Name = "ahmerUC1";
+            this.ahmerUC1.Size = new System.Drawing.Size(984, 527);
+            this.ahmerUC1.TabIndex = 5;
+            // 
             // developerUC1
             // 
             this.developerUC1.BackColor = System.Drawing.Color.Coral;
@@ -385,6 +436,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Coral;
             this.ClientSize = new System.Drawing.Size(1184, 812);
+            this.Controls.Add(this.majorUC1);
+            this.Controls.Add(this.internetUC1);
+            this.Controls.Add(this.ahmerUC1);
             this.Controls.Add(this.developerUC1);
             this.Controls.Add(this.panelAhmerSoftwareCategories);
             this.Controls.Add(this.panelBottom);
@@ -432,6 +486,10 @@
         public System.Windows.Forms.Label labelShowDestination;
         public System.Windows.Forms.ProgressBar progressBarTotal;
         public System.Windows.Forms.ProgressBar progressBarIndividual;
+        private System.Windows.Forms.Button buttonAhmer;
+        private AhmerUC ahmerUC1;
+        private InternetUC internetUC1;
+        private MajorUC majorUC1;
     }
 }
 

@@ -30,6 +30,7 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             InitializeComponent();
 
             labelSoftwareCategory.Text = "";
+            this.ahmerUC1.BringToFront();
 
             buttonAutoInstall.Text = titleAutoInstall;
             buttonDeveloper.Text = titleDeveloper;
@@ -57,6 +58,24 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         {
             labelSoftwareCategory.Text = titleDeveloper;
             this.developerUC1.BringToFront();
+        }
+
+        private void ButtonInternet_Click(object sender, EventArgs e)
+        {
+            labelSoftwareCategory.Text = titleInternet;
+            this.internetUC1.BringToFront();
+        }
+
+        private void ButtonMajor_Click(object sender, EventArgs e)
+        {
+            labelSoftwareCategory.Text = titleMajor;
+            this.majorUC1.BringToFront();
+        }
+
+        private void ButtonAhmer_Click(object sender, EventArgs e)
+        {
+            labelSoftwareCategory.Text = "";
+            this.ahmerUC1.BringToFront();
         }
     }
 }
