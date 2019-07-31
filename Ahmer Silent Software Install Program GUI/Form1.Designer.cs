@@ -28,13 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.panelLeftSide = new System.Windows.Forms.Panel();
+            this.SuspendLayout();
+            // 
+            // panelLeftSide
+            // 
+            this.panelLeftSide.BackColor = System.Drawing.Color.DarkSalmon;
+            this.panelLeftSide.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelLeftSide.Location = new System.Drawing.Point(0, 0);
+            this.panelLeftSide.Name = "panelLeftSide";
+            this.panelLeftSide.Size = new System.Drawing.Size(200, 812);
+            this.panelLeftSide.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.Coral;
+            this.ClientSize = new System.Drawing.Size(1184, 812);
+            this.Controls.Add(this.panelLeftSide);
+            this.ForeColor = System.Drawing.Color.Black;
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panelLeftSide;
     }
 }
 
