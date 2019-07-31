@@ -22,6 +22,9 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         private const string titlePDF = "PDF Softwares";
         private const string titleUtilities = "Utilities Softwares";
 
+        private static Label programFileLabel = null;
+        private static Label tempFolderLabel = null;
+
         public MainProgram()
         {
             InitializeComponent();
@@ -38,10 +41,15 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             buttonUtilities.Text = titleUtilities;
 
             labelTitle.Text = titleHeading;
+
+            //tempFolderLabel.Text = Constants.TempFolder;
+            programFileLabel = labelShowProgramFile;
         }
 
-        public static void SetShowProgramFile(string s)
+        public static string GetSetShowProgramFile
         {
+            get { return programFileLabel.Text; }
+            set { programFileLabel.Text = value; }
         }
 
         private void ButtonDeveloper_Click(object sender, EventArgs e)

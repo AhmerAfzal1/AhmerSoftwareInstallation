@@ -19,6 +19,8 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         private const string javaJDK8 = "Java JDK 8 Update 221";
         private const string python = "Python 3.7.4";
 
+        private MainProgram mainProgram;
+
         public DeveloperUC()
         {
             InitializeComponent();
@@ -34,9 +36,7 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         private void ButtonJavaJDK8_Click(object sender, EventArgs e)
         {
             string address = "D:\\Softwares\\Java 8 Update 171.zip";
-            MainProgram mainProgram = new MainProgram();
-            mainProgram.labelShowProgramFile.Text = address;
-            
+            MainProgram.GetSetShowProgramFile = address;
         }
     }
 }
