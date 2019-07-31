@@ -77,8 +77,32 @@
     <Compile Include="MajorUC.Designer.cs">
       <DependentUpon>MajorUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="MobileUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MobileUC.Designer.cs">
+      <DependentUpon>MobileUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultimediaUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MultimediaUC.Designer.cs">
+      <DependentUpon>MultimediaUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PdfUC.Designer.cs">
+      <DependentUpon>PdfUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UtilitiesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UtilitiesUC.Designer.cs">
+      <DependentUpon>UtilitiesUC.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AhmerUC.resx">
       <DependentUpon>AhmerUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +118,15 @@
     <EmbeddedResource Include="MajorUC.resx">
       <DependentUpon>MajorUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MobileUC.resx">
+      <DependentUpon>MobileUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultimediaUC.resx">
+      <DependentUpon>MultimediaUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfUC.resx">
+      <DependentUpon>PdfUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -103,6 +136,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UtilitiesUC.resx">
+      <DependentUpon>UtilitiesUC.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

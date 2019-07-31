@@ -77,5 +77,29 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             labelSoftwareCategory.Text = "";
             this.ahmerUC1.BringToFront();
         }
+
+        private void ButtonMobile_Click(object sender, EventArgs e)
+        {
+            labelSoftwareCategory.Text = titleMobile;
+            this.mobileUC1.BringToFront();
+        }
+
+        private void ButtonMultimedia_Click(object sender, EventArgs e)
+        {
+            labelSoftwareCategory.Text = titleMultimedia;
+            this.multimediaUC1.BringToFront();
+        }
+
+        private void ButtonPDF_Click(object sender, EventArgs e)
+        {
+            labelSoftwareCategory.Text = titlePDF;
+            this.pdfUC1.BringToFront();
+        }
+
+        private void ButtonUtilities_Click(object sender, EventArgs e)
+        {
+            labelSoftwareCategory.Text = titleUtilities;
+            this.utilitiesUC1.BringToFront();
+        }
     }
 }

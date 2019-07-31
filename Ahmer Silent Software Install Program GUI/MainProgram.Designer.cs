@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelLeftSide = new System.Windows.Forms.Panel();
+            this.buttonAhmer = new System.Windows.Forms.Button();
             this.buttonUtilities = new System.Windows.Forms.Button();
             this.buttonPDF = new System.Windows.Forms.Button();
             this.buttonMultimedia = new System.Windows.Forms.Button();
@@ -52,11 +53,14 @@
             this.labelProgramFile = new System.Windows.Forms.Label();
             this.panelAhmerSoftwareCategories = new System.Windows.Forms.Panel();
             this.labelSoftwareCategory = new System.Windows.Forms.Label();
-            this.buttonAhmer = new System.Windows.Forms.Button();
             this.majorUC1 = new Ahmer_Silent_Software_Install_Program_GUI.MajorUC();
             this.internetUC1 = new Ahmer_Silent_Software_Install_Program_GUI.InternetUC();
             this.ahmerUC1 = new Ahmer_Silent_Software_Install_Program_GUI.AhmerUC();
             this.developerUC1 = new Ahmer_Silent_Software_Install_Program_GUI.DeveloperUC();
+            this.mobileUC1 = new Ahmer_Silent_Software_Install_Program_GUI.MobileUC();
+            this.multimediaUC1 = new Ahmer_Silent_Software_Install_Program_GUI.MultimediaUC();
+            this.pdfUC1 = new Ahmer_Silent_Software_Install_Program_GUI.PdfUC();
+            this.utilitiesUC1 = new Ahmer_Silent_Software_Install_Program_GUI.UtilitiesUC();
             this.panelLeftSide.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelBottom.SuspendLayout();
@@ -82,6 +86,23 @@
             this.panelLeftSide.Size = new System.Drawing.Size(200, 812);
             this.panelLeftSide.TabIndex = 0;
             // 
+            // buttonAhmer
+            // 
+            this.buttonAhmer.BackColor = System.Drawing.Color.SpringGreen;
+            this.buttonAhmer.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonAhmer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
+            this.buttonAhmer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSpringGreen;
+            this.buttonAhmer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAhmer.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAhmer.ForeColor = System.Drawing.Color.Black;
+            this.buttonAhmer.Location = new System.Drawing.Point(5, 778);
+            this.buttonAhmer.Name = "buttonAhmer";
+            this.buttonAhmer.Size = new System.Drawing.Size(25, 25);
+            this.buttonAhmer.TabIndex = 8;
+            this.buttonAhmer.Text = "i";
+            this.buttonAhmer.UseVisualStyleBackColor = false;
+            this.buttonAhmer.Click += new System.EventHandler(this.ButtonAhmer_Click);
+            // 
             // buttonUtilities
             // 
             this.buttonUtilities.BackColor = System.Drawing.Color.SpringGreen;
@@ -98,6 +119,7 @@
             this.buttonUtilities.TabIndex = 7;
             this.buttonUtilities.Text = "button1";
             this.buttonUtilities.UseVisualStyleBackColor = false;
+            this.buttonUtilities.Click += new System.EventHandler(this.ButtonUtilities_Click);
             // 
             // buttonPDF
             // 
@@ -115,6 +137,7 @@
             this.buttonPDF.TabIndex = 6;
             this.buttonPDF.Text = "button1";
             this.buttonPDF.UseVisualStyleBackColor = false;
+            this.buttonPDF.Click += new System.EventHandler(this.ButtonPDF_Click);
             // 
             // buttonMultimedia
             // 
@@ -132,6 +155,7 @@
             this.buttonMultimedia.TabIndex = 5;
             this.buttonMultimedia.Text = "button1";
             this.buttonMultimedia.UseVisualStyleBackColor = false;
+            this.buttonMultimedia.Click += new System.EventHandler(this.ButtonMultimedia_Click);
             // 
             // buttonMobile
             // 
@@ -149,6 +173,7 @@
             this.buttonMobile.TabIndex = 4;
             this.buttonMobile.Text = "button1";
             this.buttonMobile.UseVisualStyleBackColor = false;
+            this.buttonMobile.Click += new System.EventHandler(this.ButtonMobile_Click);
             // 
             // buttonMajor
             // 
@@ -377,23 +402,6 @@
             this.labelSoftwareCategory.Text = "Ahmer Software Categories";
             this.labelSoftwareCategory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // buttonAhmer
-            // 
-            this.buttonAhmer.BackColor = System.Drawing.Color.SpringGreen;
-            this.buttonAhmer.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.buttonAhmer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleGreen;
-            this.buttonAhmer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSpringGreen;
-            this.buttonAhmer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAhmer.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAhmer.ForeColor = System.Drawing.Color.Black;
-            this.buttonAhmer.Location = new System.Drawing.Point(5, 778);
-            this.buttonAhmer.Name = "buttonAhmer";
-            this.buttonAhmer.Size = new System.Drawing.Size(25, 25);
-            this.buttonAhmer.TabIndex = 8;
-            this.buttonAhmer.Text = "i";
-            this.buttonAhmer.UseVisualStyleBackColor = false;
-            this.buttonAhmer.Click += new System.EventHandler(this.ButtonAhmer_Click);
-            // 
             // majorUC1
             // 
             this.majorUC1.BackColor = System.Drawing.Color.Coral;
@@ -430,12 +438,52 @@
             this.developerUC1.Size = new System.Drawing.Size(984, 527);
             this.developerUC1.TabIndex = 4;
             // 
+            // mobileUC1
+            // 
+            this.mobileUC1.BackColor = System.Drawing.Color.Coral;
+            this.mobileUC1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.mobileUC1.Location = new System.Drawing.Point(200, 115);
+            this.mobileUC1.Name = "mobileUC1";
+            this.mobileUC1.Size = new System.Drawing.Size(984, 527);
+            this.mobileUC1.TabIndex = 8;
+            // 
+            // multimediaUC1
+            // 
+            this.multimediaUC1.BackColor = System.Drawing.Color.Coral;
+            this.multimediaUC1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.multimediaUC1.Location = new System.Drawing.Point(200, 115);
+            this.multimediaUC1.Name = "multimediaUC1";
+            this.multimediaUC1.Size = new System.Drawing.Size(984, 527);
+            this.multimediaUC1.TabIndex = 9;
+            // 
+            // pdfUC1
+            // 
+            this.pdfUC1.BackColor = System.Drawing.Color.Coral;
+            this.pdfUC1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.pdfUC1.Location = new System.Drawing.Point(200, 115);
+            this.pdfUC1.Name = "pdfUC1";
+            this.pdfUC1.Size = new System.Drawing.Size(984, 527);
+            this.pdfUC1.TabIndex = 10;
+            // 
+            // utilitiesUC1
+            // 
+            this.utilitiesUC1.BackColor = System.Drawing.Color.Coral;
+            this.utilitiesUC1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.utilitiesUC1.Location = new System.Drawing.Point(200, 115);
+            this.utilitiesUC1.Name = "utilitiesUC1";
+            this.utilitiesUC1.Size = new System.Drawing.Size(984, 527);
+            this.utilitiesUC1.TabIndex = 11;
+            // 
             // MainProgram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Coral;
             this.ClientSize = new System.Drawing.Size(1184, 812);
+            this.Controls.Add(this.utilitiesUC1);
+            this.Controls.Add(this.pdfUC1);
+            this.Controls.Add(this.multimediaUC1);
+            this.Controls.Add(this.mobileUC1);
             this.Controls.Add(this.majorUC1);
             this.Controls.Add(this.internetUC1);
             this.Controls.Add(this.ahmerUC1);
@@ -490,6 +538,10 @@
         private AhmerUC ahmerUC1;
         private InternetUC internetUC1;
         private MajorUC majorUC1;
+        private MobileUC mobileUC1;
+        private MultimediaUC multimediaUC1;
+        private PdfUC pdfUC1;
+        private UtilitiesUC utilitiesUC1;
     }
 }
 
