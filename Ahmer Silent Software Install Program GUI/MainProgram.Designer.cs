@@ -381,6 +381,7 @@
             this.developerUC1.Name = "developerUC1";
             this.developerUC1.Size = new System.Drawing.Size(984, 527);
             this.developerUC1.TabIndex = 4;
+            this.developerUC1.Load += new System.EventHandler(this.DeveloperUC1_Load);
             // 
             // MainProgram
             // 

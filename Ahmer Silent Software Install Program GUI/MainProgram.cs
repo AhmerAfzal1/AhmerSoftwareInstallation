@@ -49,5 +49,10 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             labelSoftwareCategory.Text = titleDeveloper;
             this.developerUC1.BringToFront();
         }
+
+        private void DeveloperUC1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
