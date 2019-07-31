@@ -40,8 +40,22 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.panelBottom = new System.Windows.Forms.Panel();
+            this.labelProgramFile = new System.Windows.Forms.Label();
+            this.labelDestination = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelSoftwareCategory = new System.Windows.Forms.Label();
+            this.labelExtractingFiles = new System.Windows.Forms.Label();
+            this.labelProgressIndividual = new System.Windows.Forms.Label();
+            this.labelProgressTotal = new System.Windows.Forms.Label();
+            this.labelShowProgramFile = new System.Windows.Forms.Label();
+            this.labelShowDestination = new System.Windows.Forms.Label();
+            this.labelShowExtractingPath = new System.Windows.Forms.Label();
+            this.progressBarIndividual = new System.Windows.Forms.ProgressBar();
+            this.progressBarTotal = new System.Windows.Forms.ProgressBar();
             this.panelLeftSide.SuspendLayout();
             this.panelTop.SuspendLayout();
+            this.panelBottom.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLeftSide
@@ -204,7 +218,7 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(200, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(984, 100);
+            this.panelTop.Size = new System.Drawing.Size(984, 75);
             this.panelTop.TabIndex = 1;
             // 
             // labelTitle
@@ -212,18 +226,147 @@
             this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.Location = new System.Drawing.Point(5, 5);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(975, 90);
+            this.labelTitle.Size = new System.Drawing.Size(975, 64);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "label1";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelBottom
             // 
+            this.panelBottom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelBottom.Controls.Add(this.progressBarTotal);
+            this.panelBottom.Controls.Add(this.progressBarIndividual);
+            this.panelBottom.Controls.Add(this.labelShowExtractingPath);
+            this.panelBottom.Controls.Add(this.labelShowDestination);
+            this.panelBottom.Controls.Add(this.labelShowProgramFile);
+            this.panelBottom.Controls.Add(this.labelProgressTotal);
+            this.panelBottom.Controls.Add(this.labelProgressIndividual);
+            this.panelBottom.Controls.Add(this.labelExtractingFiles);
+            this.panelBottom.Controls.Add(this.labelDestination);
+            this.panelBottom.Controls.Add(this.labelProgramFile);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(200, 662);
+            this.panelBottom.Location = new System.Drawing.Point(200, 642);
             this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(984, 150);
+            this.panelBottom.Size = new System.Drawing.Size(984, 170);
             this.panelBottom.TabIndex = 2;
+            // 
+            // labelProgramFile
+            // 
+            this.labelProgramFile.AutoSize = true;
+            this.labelProgramFile.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelProgramFile.Location = new System.Drawing.Point(22, 11);
+            this.labelProgramFile.Name = "labelProgramFile";
+            this.labelProgramFile.Size = new System.Drawing.Size(89, 19);
+            this.labelProgramFile.TabIndex = 0;
+            this.labelProgramFile.Text = "Program File:";
+            // 
+            // labelDestination
+            // 
+            this.labelDestination.AutoSize = true;
+            this.labelDestination.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelDestination.Location = new System.Drawing.Point(22, 42);
+            this.labelDestination.Name = "labelDestination";
+            this.labelDestination.Size = new System.Drawing.Size(82, 19);
+            this.labelDestination.TabIndex = 1;
+            this.labelDestination.Text = "Destination:";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.OrangeRed;
+            this.panel1.Controls.Add(this.labelSoftwareCategory);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(200, 75);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(984, 40);
+            this.panel1.TabIndex = 3;
+            // 
+            // labelSoftwareCategory
+            // 
+            this.labelSoftwareCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSoftwareCategory.ForeColor = System.Drawing.Color.White;
+            this.labelSoftwareCategory.Location = new System.Drawing.Point(0, 0);
+            this.labelSoftwareCategory.Name = "labelSoftwareCategory";
+            this.labelSoftwareCategory.Size = new System.Drawing.Size(984, 37);
+            this.labelSoftwareCategory.TabIndex = 0;
+            this.labelSoftwareCategory.Text = "Ahmer Software Categories";
+            this.labelSoftwareCategory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelExtractingFiles
+            // 
+            this.labelExtractingFiles.AutoSize = true;
+            this.labelExtractingFiles.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelExtractingFiles.Location = new System.Drawing.Point(22, 73);
+            this.labelExtractingFiles.Name = "labelExtractingFiles";
+            this.labelExtractingFiles.Size = new System.Drawing.Size(110, 19);
+            this.labelExtractingFiles.TabIndex = 2;
+            this.labelExtractingFiles.Text = "Extracting File(s):";
+            // 
+            // labelProgressIndividual
+            // 
+            this.labelProgressIndividual.AutoSize = true;
+            this.labelProgressIndividual.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelProgressIndividual.Location = new System.Drawing.Point(22, 104);
+            this.labelProgressIndividual.Name = "labelProgressIndividual";
+            this.labelProgressIndividual.Size = new System.Drawing.Size(136, 19);
+            this.labelProgressIndividual.TabIndex = 3;
+            this.labelProgressIndividual.Text = "Progress (Individual):";
+            // 
+            // labelProgressTotal
+            // 
+            this.labelProgressTotal.AutoSize = true;
+            this.labelProgressTotal.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelProgressTotal.Location = new System.Drawing.Point(22, 135);
+            this.labelProgressTotal.Name = "labelProgressTotal";
+            this.labelProgressTotal.Size = new System.Drawing.Size(107, 19);
+            this.labelProgressTotal.TabIndex = 4;
+            this.labelProgressTotal.Text = "Progress (Total):";
+            // 
+            // labelShowProgramFile
+            // 
+            this.labelShowProgramFile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelShowProgramFile.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelShowProgramFile.Location = new System.Drawing.Point(159, 8);
+            this.labelShowProgramFile.Name = "labelShowProgramFile";
+            this.labelShowProgramFile.Size = new System.Drawing.Size(815, 25);
+            this.labelShowProgramFile.TabIndex = 5;
+            this.labelShowProgramFile.Text = "Program File:";
+            this.labelShowProgramFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelShowDestination
+            // 
+            this.labelShowDestination.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelShowDestination.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelShowDestination.Location = new System.Drawing.Point(159, 39);
+            this.labelShowDestination.Name = "labelShowDestination";
+            this.labelShowDestination.Size = new System.Drawing.Size(815, 25);
+            this.labelShowDestination.TabIndex = 6;
+            this.labelShowDestination.Text = "Program File:";
+            this.labelShowDestination.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelShowExtractingPath
+            // 
+            this.labelShowExtractingPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelShowExtractingPath.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelShowExtractingPath.Location = new System.Drawing.Point(159, 70);
+            this.labelShowExtractingPath.Name = "labelShowExtractingPath";
+            this.labelShowExtractingPath.Size = new System.Drawing.Size(815, 25);
+            this.labelShowExtractingPath.TabIndex = 7;
+            this.labelShowExtractingPath.Text = "Program File:";
+            this.labelShowExtractingPath.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // progressBarIndividual
+            // 
+            this.progressBarIndividual.Location = new System.Drawing.Point(159, 101);
+            this.progressBarIndividual.Name = "progressBarIndividual";
+            this.progressBarIndividual.Size = new System.Drawing.Size(815, 25);
+            this.progressBarIndividual.TabIndex = 8;
+            // 
+            // progressBarTotal
+            // 
+            this.progressBarTotal.Location = new System.Drawing.Point(159, 132);
+            this.progressBarTotal.Name = "progressBarTotal";
+            this.progressBarTotal.Size = new System.Drawing.Size(815, 25);
+            this.progressBarTotal.TabIndex = 9;
             // 
             // MainProgram
             // 
@@ -231,6 +374,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Coral;
             this.ClientSize = new System.Drawing.Size(1184, 812);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelLeftSide);
@@ -242,6 +386,9 @@
             this.Text = "Ahmer\'s Automatically And Silently Softwares Installation Program GUI";
             this.panelLeftSide.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
+            this.panelBottom.ResumeLayout(false);
+            this.panelBottom.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -260,6 +407,18 @@
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Label labelTitle;
         public System.Windows.Forms.Panel panelBottom;
+        private System.Windows.Forms.Label labelDestination;
+        private System.Windows.Forms.Label labelProgramFile;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelSoftwareCategory;
+        private System.Windows.Forms.Label labelProgressTotal;
+        private System.Windows.Forms.Label labelProgressIndividual;
+        private System.Windows.Forms.Label labelExtractingFiles;
+        private System.Windows.Forms.Label labelShowProgramFile;
+        private System.Windows.Forms.Label labelShowExtractingPath;
+        private System.Windows.Forms.Label labelShowDestination;
+        private System.Windows.Forms.ProgressBar progressBarTotal;
+        private System.Windows.Forms.ProgressBar progressBarIndividual;
     }
 }
 
