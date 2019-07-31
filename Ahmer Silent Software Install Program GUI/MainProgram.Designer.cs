@@ -50,13 +50,13 @@
             this.labelExtractingFiles = new System.Windows.Forms.Label();
             this.labelDestination = new System.Windows.Forms.Label();
             this.labelProgramFile = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelAhmerSoftwareCategories = new System.Windows.Forms.Panel();
             this.labelSoftwareCategory = new System.Windows.Forms.Label();
             this.developerUC1 = new Ahmer_Silent_Software_Install_Program_GUI.DeveloperUC();
             this.panelLeftSide.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelBottom.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelAhmerSoftwareCategories.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLeftSide
@@ -351,15 +351,15 @@
             this.labelProgramFile.TabIndex = 0;
             this.labelProgramFile.Text = "Program File:";
             // 
-            // panel1
+            // panelAhmerSoftwareCategories
             // 
-            this.panel1.BackColor = System.Drawing.Color.Coral;
-            this.panel1.Controls.Add(this.labelSoftwareCategory);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(200, 75);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 40);
-            this.panel1.TabIndex = 3;
+            this.panelAhmerSoftwareCategories.BackColor = System.Drawing.Color.Coral;
+            this.panelAhmerSoftwareCategories.Controls.Add(this.labelSoftwareCategory);
+            this.panelAhmerSoftwareCategories.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAhmerSoftwareCategories.Location = new System.Drawing.Point(200, 75);
+            this.panelAhmerSoftwareCategories.Name = "panelAhmerSoftwareCategories";
+            this.panelAhmerSoftwareCategories.Size = new System.Drawing.Size(984, 40);
+            this.panelAhmerSoftwareCategories.TabIndex = 3;
             // 
             // labelSoftwareCategory
             // 
@@ -389,7 +389,7 @@
             this.BackColor = System.Drawing.Color.Coral;
             this.ClientSize = new System.Drawing.Size(1184, 812);
             this.Controls.Add(this.developerUC1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelAhmerSoftwareCategories);
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelLeftSide);
@@ -403,7 +403,7 @@
             this.panelTop.ResumeLayout(false);
             this.panelBottom.ResumeLayout(false);
             this.panelBottom.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.panelAhmerSoftwareCategories.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -421,20 +421,20 @@
         private System.Windows.Forms.Button buttonDeveloper;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Label labelTitle;
-        public System.Windows.Forms.Panel panelBottom;
         private System.Windows.Forms.Label labelDestination;
         private System.Windows.Forms.Label labelProgramFile;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelAhmerSoftwareCategories;
         private System.Windows.Forms.Label labelSoftwareCategory;
         private System.Windows.Forms.Label labelProgressTotal;
         private System.Windows.Forms.Label labelProgressIndividual;
         private System.Windows.Forms.Label labelExtractingFiles;
-        private System.Windows.Forms.Label labelShowProgramFile;
-        private System.Windows.Forms.Label labelShowExtractingPath;
-        private System.Windows.Forms.Label labelShowDestination;
-        private System.Windows.Forms.ProgressBar progressBarTotal;
-        private System.Windows.Forms.ProgressBar progressBarIndividual;
         private DeveloperUC developerUC1;
+        private System.Windows.Forms.Panel panelBottom;
+        public System.Windows.Forms.Label labelShowProgramFile;
+        public System.Windows.Forms.Label labelShowExtractingPath;
+        public System.Windows.Forms.Label labelShowDestination;
+        public System.Windows.Forms.ProgressBar progressBarTotal;
+        public System.Windows.Forms.ProgressBar progressBarIndividual;
     }
 }
 

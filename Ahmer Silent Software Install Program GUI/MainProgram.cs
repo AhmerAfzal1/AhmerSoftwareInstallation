@@ -40,6 +40,10 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             labelTitle.Text = titleHeading;
         }
 
+        public static void SetShowProgramFile(string s)
+        {
+        }
+
         private void ButtonDeveloper_Click(object sender, EventArgs e)
         {
             labelSoftwareCategory.Text = titleDeveloper;
