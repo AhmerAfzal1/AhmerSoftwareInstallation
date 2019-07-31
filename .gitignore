@@ -1,0 +1,11 @@
+*.iml
+*.spec
+*.cfg
+*.cache
+.idea/
+.vs/
+.vs/*.*
+Ahmer Silent Software Install Program GUI/bin/
+Ahmer Silent Software Install Program GUI/obj/
+Ahmer Silent Software Install Program GUI/bin/*.*
+Ahmer Silent Software Install Program GUI/obj/*.*
