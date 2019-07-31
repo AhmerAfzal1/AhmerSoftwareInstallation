@@ -276,7 +276,6 @@
             this.labelShowExtractingPath.Name = "labelShowExtractingPath";
             this.labelShowExtractingPath.Size = new System.Drawing.Size(815, 25);
             this.labelShowExtractingPath.TabIndex = 7;
-            this.labelShowExtractingPath.Text = "Program File:";
             this.labelShowExtractingPath.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelShowDestination
@@ -287,7 +286,6 @@
             this.labelShowDestination.Name = "labelShowDestination";
             this.labelShowDestination.Size = new System.Drawing.Size(815, 25);
             this.labelShowDestination.TabIndex = 6;
-            this.labelShowDestination.Text = "Program File:";
             this.labelShowDestination.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelShowProgramFile
@@ -298,7 +296,6 @@
             this.labelShowProgramFile.Name = "labelShowProgramFile";
             this.labelShowProgramFile.Size = new System.Drawing.Size(815, 25);
             this.labelShowProgramFile.TabIndex = 5;
-            this.labelShowProgramFile.Text = "Program File:";
             this.labelShowProgramFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelProgressTotal
@@ -381,7 +378,6 @@
             this.developerUC1.Name = "developerUC1";
             this.developerUC1.Size = new System.Drawing.Size(984, 527);
             this.developerUC1.TabIndex = 4;
-            this.developerUC1.Load += new System.EventHandler(this.DeveloperUC1_Load);
             // 
             // MainProgram
             // 
