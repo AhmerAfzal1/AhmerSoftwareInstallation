@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeveloperUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DeveloperUC.Designer.cs">
+      <DependentUpon>DeveloperUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainProgram.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DeveloperUC.resx">
+      <DependentUpon>DeveloperUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainProgram.resx">
       <DependentUpon>MainProgram.cs</DependentUpon>
     </EmbeddedResource>
