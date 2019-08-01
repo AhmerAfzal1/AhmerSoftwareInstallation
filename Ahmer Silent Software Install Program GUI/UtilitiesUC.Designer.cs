@@ -206,6 +206,7 @@
             this.buttonHWiNFO.TabIndex = 23;
             this.buttonHWiNFO.Text = "button";
             this.buttonHWiNFO.UseVisualStyleBackColor = false;
+            this.buttonHWiNFO.Click += new System.EventHandler(this.ButtonHWiNFO_Click);
             // 
             // UtilitiesUC
             // 

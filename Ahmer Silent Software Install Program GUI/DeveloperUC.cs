@@ -31,7 +31,7 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             string address = "D:\\Softwares\\Java 8 Update 171.zip";
             string setup = Constants.TempFolder + "Java 8 Update 171\\Setup.exe";
             MainProgram.GetSetShowProgramFile = address;
-            MainProgram.ProgressAsync(setup, null);
+            MainProgram.ProgressAsync(setup, null, null);
             /*
             Thread.Sleep(1000);
             if (File.Exists(setup))

@@ -21,17 +21,19 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         private const string titlePDF = "PDF Softwares";
         private const string titleUtilities = "Utilities Softwares";
 
-        private static BackgroundWorker extractFile;
-        private long fileSize;
-        private long extractedSizeTotal;
-        private long compressedSize;
-        private string compressedFileName;
-
         private static Label programFileLabel = null;
         private static Label tempFolderLabel = null;
 
+        private static BackgroundWorker installBackgroundWorker = null;
+        private static BackgroundWorker extractFile = null;
+        private long fileSize = 0;
+        private long extractedSizeTotal = 0;
+        private long compressedSize = 0;
+        private string compressedFileName = null;
+
         private static string newPath = null;
         private static string arguments = null;
+        private static string zipPassword = null;
 
         public MainProgram()
         {
@@ -62,6 +64,13 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             extractFile.ProgressChanged += ExtractFile_ProgressChanged;
             extractFile.RunWorkerCompleted += ExtractFile_RunWorkerCompleted;
             extractFile.WorkerReportsProgress = true;
+
+            installBackgroundWorker = new BackgroundWorker();
+            installBackgroundWorker.DoWork += InstallBackgroundWorker_DoWork;
+            installBackgroundWorker.ProgressChanged += InstallBackgroundWorker_ProgressChanged;
+            installBackgroundWorker.RunWorkerCompleted += InstallBackgroundWorker_RunWorkerCompleted;
+            installBackgroundWorker.WorkerReportsProgress = true;
+
         }
 
         private void ButtonDeveloper_Click(object sender, EventArgs e)
@@ -112,49 +121,15 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             this.ahmerUC1.BringToFront();
         }
 
-        public static string GetSetShowProgramFile
-        {
-            get { return programFileLabel.Text; }
-            set { programFileLabel.Text = value; }
-        }
-
         private void ExtractFile_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             progressBarIndividual.Value = int.MaxValue;
             progressBarTotal.Value = int.MaxValue;
+            if (e.Error == null)
+            {
+                installBackgroundWorker.RunWorkerAsync();
+            }
             //Constants.MessageBoxInformation("Extraction completed!");
-            try
-            {
-                using (Process exeFile = new Process())
-                {
-                    exeFile.StartInfo.FileName = newPath;
-                    exeFile.StartInfo.Arguments = arguments;
-                    exeFile.StartInfo.Verb = "runas";
-                    exeFile.StartInfo.UseShellExecute = true;
-                    exeFile.Start();
-                    exeFile.WaitForExit();
-                }
-            }
-            catch (InvalidOperationException i)
-            {
-                Constants.MessageBoxException("InvalidOperationException: " + i.Message);
-            }
-            catch (ArgumentNullException a)
-            {
-                Constants.MessageBoxException("ArgumentNullException: " + a.Message);
-            }
-            catch (PlatformNotSupportedException p)
-            {
-                Constants.MessageBoxException("PlatformNotSupportedException: " + p.Message);
-            }
-            catch (FileNotFoundException f)
-            {
-                Constants.MessageBoxException("FileNotFoundException: " + f.Message);
-            }
-            catch (Win32Exception ex)
-            {
-                Constants.MessageBoxException("Win32Exception: " + ex.Message);
-            }
         }
 
         private void ExtractFile_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -184,11 +159,12 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
                     extractedSizeTotal = 0;
                     int fileAmount = zipFile.Count;
                     int fileIndex = 0;
+                    zipFile.Password = zipPassword;
                     zipFile.ExtractProgress += Zip_ExtractProgress;
                     foreach (ZipEntry ZipEntry in zipFile)
                     {
                         fileIndex++;
-                        compressedFileName = "(" + fileIndex.ToString() + "/" + fileAmount + "): " + ZipEntry.FileName;
+                        compressedFileName = "(" + fileIndex.ToString() + "\\" + fileAmount + "): " + ZipEntry.FileName;
                         //Get the size of a single compressed file
                         compressedSize = ZipEntry.CompressedSize;
                         ZipEntry.Extract(extractPath, ExtractExistingFileAction.OverwriteSilently);
@@ -231,20 +207,72 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             }
         }
 
+        private void InstallBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            Constants.MessageBoxInformation("Installation completed!");
+        }
+
+        private void InstallBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void InstallBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                using (Process exeFile = new Process())
+                {
+                    exeFile.StartInfo.FileName = newPath;
+                    exeFile.StartInfo.Arguments = arguments;
+                    exeFile.StartInfo.Verb = "runas";
+                    exeFile.StartInfo.UseShellExecute = true;
+                    exeFile.Start();
+                    exeFile.WaitForExit();
+                }
+            }
+            catch (InvalidOperationException i)
+            {
+                Constants.MessageBoxException("InvalidOperationException: " + i.Message);
+            }
+            catch (ArgumentNullException a)
+            {
+                Constants.MessageBoxException("ArgumentNullException: " + a.Message);
+            }
+            catch (PlatformNotSupportedException p)
+            {
+                Constants.MessageBoxException("PlatformNotSupportedException: " + p.Message);
+            }
+            catch (FileNotFoundException f)
+            {
+                Constants.MessageBoxException("FileNotFoundException: " + f.Message);
+            }
+            catch (Win32Exception ex)
+            {
+                Constants.MessageBoxException("Win32Exception: " + ex.Message);
+            }
+        }
+
         private void Zip_ExtractProgress(object sender, ExtractProgressEventArgs e)
         {
             if (e.TotalBytesToTransfer > 0)
             {
                 long percent = e.BytesTransferred * int.MaxValue / e.TotalBytesToTransfer;
-                //Console.WriteLine("Indivual: " + percent);
                 extractFile.ReportProgress((int)percent);
             }
         }
 
-        public static void ProgressAsync(string path, string argument = null)
+        public static string GetSetShowProgramFile
+        {
+            get { return programFileLabel.Text; }
+            set { programFileLabel.Text = value; }
+        }
+
+        public static void ProgressAsync(string path, string argument = null, string password = null)
         {
             newPath = path;
             arguments = argument;
+            zipPassword = password;
             extractFile.RunWorkerAsync();
         }
     }
