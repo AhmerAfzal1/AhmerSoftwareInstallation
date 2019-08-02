@@ -10,8 +10,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Ahmer's Auto And Silent Softwares Installation Program GUI")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Rose Corporation")]
-[assembly: AssemblyProduct("Ahmer Silent Software Install Program")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyProduct("Ahmer's Auto And Silent Softwares Installation Program GUI")]
+[assembly: AssemblyCopyright("Copyright ©  2019, Rose Corporation")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -11,7 +11,7 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
 {
     public partial class MainProgram : Form
     {
-        private const string titleHeading = "Ahmer's Automatically And Silently Softwares Installation Program GUI";
+        private const string titleHeading = "Ahmer's Automatically And Silently Softwares Installation Program";
         private const string titleAutoInstall = "Auto Install Drivers And Recommended Softwares";
         private const string titleDeveloper = "Developer Softwares";
         private const string titleInternet = "Internet Softwares";
@@ -21,18 +21,19 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         private const string titlePDF = "PDF Softwares";
         private const string titleUtilities = "Utilities Softwares";
 
+        private static BackgroundWorker extractBackgroundWorker = null;
+        private static BackgroundWorker installBackgroundWorker = null;
+        private static bool portable = false;
         private static Label programFileLabel = null;
         private static Label tempFolderLabel = null;
-
-        private static BackgroundWorker installBackgroundWorker = null;
-        private static BackgroundWorker extractFile = null;
-        private long fileSize = 0;
-        private long extractedSizeTotal = 0;
-        private long compressedSize = 0;
-        private string compressedFileName = null;
-
-        private static string newPath = null;
-        private static string arguments = null;
+        private static long zipCompressedSize = 0;
+        private static long zipExtractedTotalSize = 0;
+        private static long zipFileSize = 0;
+        private static string exeArguments = null;
+        private static string exeSoftware = null;
+        private static string nameSoftware = null;
+        private static string tempfolder = null;
+        private static string zipFileName = null;
         private static string zipPassword = null;
 
         public MainProgram()
@@ -53,24 +54,23 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             labelTitle.Text = titleHeading;
 
             tempFolderLabel = labelShowDestination;
-            tempFolderLabel.Text = Constants.TempFolder;
             programFileLabel = labelShowProgramFile;
+            GetSetShowShowDestination = null;
 
             progressBarIndividual.Maximum = int.MaxValue;
             progressBarTotal.Maximum = int.MaxValue;
 
-            extractFile = new BackgroundWorker();
-            extractFile.DoWork += ExtractFile_DoWork;
-            extractFile.ProgressChanged += ExtractFile_ProgressChanged;
-            extractFile.RunWorkerCompleted += ExtractFile_RunWorkerCompleted;
-            extractFile.WorkerReportsProgress = true;
+            extractBackgroundWorker = new BackgroundWorker();
+            extractBackgroundWorker.DoWork += ExtractFile_DoWork;
+            extractBackgroundWorker.ProgressChanged += ExtractFile_ProgressChanged;
+            extractBackgroundWorker.RunWorkerCompleted += ExtractFile_RunWorkerCompleted;
+            extractBackgroundWorker.WorkerReportsProgress = true;
 
             installBackgroundWorker = new BackgroundWorker();
             installBackgroundWorker.DoWork += InstallBackgroundWorker_DoWork;
             installBackgroundWorker.ProgressChanged += InstallBackgroundWorker_ProgressChanged;
             installBackgroundWorker.RunWorkerCompleted += InstallBackgroundWorker_RunWorkerCompleted;
             installBackgroundWorker.WorkerReportsProgress = true;
-
         }
 
         private void ButtonDeveloper_Click(object sender, EventArgs e)
@@ -134,29 +134,40 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
 
         private void ExtractFile_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            labelShowExtractingPath.Text = compressedFileName;
+            labelShowExtractingPath.Text = zipFileName;
             progressBarIndividual.Value = e.ProgressPercentage;
 
             //Calculate the totalPercent
-            long totalPercent = ((long)e.ProgressPercentage * compressedSize + extractedSizeTotal * int.MaxValue) / fileSize;
+            long totalPercent = ((long)e.ProgressPercentage * zipCompressedSize + zipExtractedTotalSize * int.MaxValue) / zipFileSize;
             if (totalPercent > int.MaxValue) totalPercent = int.MaxValue;
             progressBarTotal.Value = (int)totalPercent;
+            GetSetShowShowDestination = tempfolder;
         }
 
         private void ExtractFile_DoWork(object sender, DoWorkEventArgs e)
         {
+            switch (portable)
+            {
+                case true:
+                    tempfolder = Constants.TempFolderPortable;
+                    break;
+
+                case false:
+                    tempfolder = Constants.TempFolder;
+                    break;
+            }
+
             try
             {
                 string fileName = GetSetShowProgramFile;
-                string extractPath = Constants.TempFolder;
 
                 //Get the size of the zip file
                 FileInfo fileInfo = new FileInfo(fileName);
-                fileSize = fileInfo.Length;
+                zipFileSize = fileInfo.Length;
                 using (ZipFile zipFile = ZipFile.Read(fileName))
                 {
                     //Reset the bytes total extracted to 0
-                    extractedSizeTotal = 0;
+                    zipExtractedTotalSize = 0;
                     int fileAmount = zipFile.Count;
                     int fileIndex = 0;
                     zipFile.Password = zipPassword;
@@ -164,12 +175,12 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
                     foreach (ZipEntry ZipEntry in zipFile)
                     {
                         fileIndex++;
-                        compressedFileName = "(" + fileIndex.ToString() + "\\" + fileAmount + "): " + ZipEntry.FileName;
+                        zipFileName = "(" + fileIndex.ToString() + "\\" + fileAmount + "): " + ZipEntry.FileName;
                         //Get the size of a single compressed file
-                        compressedSize = ZipEntry.CompressedSize;
-                        ZipEntry.Extract(extractPath, ExtractExistingFileAction.OverwriteSilently);
+                        zipCompressedSize = ZipEntry.CompressedSize;
+                        ZipEntry.Extract(tempfolder, ExtractExistingFileAction.OverwriteSilently);
                         //Calculate the bytes total extracted
-                        extractedSizeTotal += compressedSize;
+                        zipExtractedTotalSize += zipCompressedSize;
                     }
                 }
             }
@@ -219,12 +230,14 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
 
         private void InstallBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
+            string makeNewPath = tempfolder + nameSoftware + "\\" + exeSoftware;
+
             try
             {
                 using (Process exeFile = new Process())
                 {
-                    exeFile.StartInfo.FileName = newPath;
-                    exeFile.StartInfo.Arguments = arguments;
+                    exeFile.StartInfo.FileName = makeNewPath;
+                    exeFile.StartInfo.Arguments = exeArguments;
                     exeFile.StartInfo.Verb = "runas";
                     exeFile.StartInfo.UseShellExecute = true;
                     exeFile.Start();
@@ -258,7 +271,7 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             if (e.TotalBytesToTransfer > 0)
             {
                 long percent = e.BytesTransferred * int.MaxValue / e.TotalBytesToTransfer;
-                extractFile.ReportProgress((int)percent);
+                extractBackgroundWorker.ReportProgress((int)percent);
             }
         }
 
@@ -268,12 +281,21 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             set { programFileLabel.Text = value; }
         }
 
-        public static void ProgressAsync(string path, string argument = null, string password = null)
+        public static string GetSetShowShowDestination
         {
-            newPath = path;
-            arguments = argument;
+            get { return tempFolderLabel.Text; }
+            set { tempFolderLabel.Text = value; }
+        }
+
+        public static void ProgressAsync(string softwareName, string softwareExe,
+            string argument = null, string password = null, bool isPortable = false)
+        {
+            nameSoftware = softwareName;
+            exeSoftware = softwareExe;
+            exeArguments = argument;
             zipPassword = password;
-            extractFile.RunWorkerAsync();
+            portable = isPortable;
+            extractBackgroundWorker.RunWorkerAsync();
         }
     }
 }

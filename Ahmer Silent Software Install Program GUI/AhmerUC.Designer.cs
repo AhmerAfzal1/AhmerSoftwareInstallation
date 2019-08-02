@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelAhmerAfzal = new System.Windows.Forms.Label();
             this.labelDevelopedBy = new System.Windows.Forms.Label();
+            this.labelAhmerAfzal = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // labelAhmerAfzal
-            // 
-            this.labelAhmerAfzal.AutoSize = true;
-            this.labelAhmerAfzal.Font = new System.Drawing.Font("Segoe UI", 90F, System.Drawing.FontStyle.Bold);
-            this.labelAhmerAfzal.ForeColor = System.Drawing.Color.Crimson;
-            this.labelAhmerAfzal.Location = new System.Drawing.Point(125, 212);
-            this.labelAhmerAfzal.Name = "labelAhmerAfzal";
-            this.labelAhmerAfzal.Size = new System.Drawing.Size(765, 159);
-            this.labelAhmerAfzal.TabIndex = 3;
-            this.labelAhmerAfzal.Text = "Ahmer Afzal";
             // 
             // labelDevelopedBy
             // 
             this.labelDevelopedBy.AutoSize = true;
-            this.labelDevelopedBy.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDevelopedBy.ForeColor = System.Drawing.Color.Black;
-            this.labelDevelopedBy.Location = new System.Drawing.Point(95, 155);
+            this.labelDevelopedBy.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDevelopedBy.ForeColor = System.Drawing.Color.Azure;
+            this.labelDevelopedBy.Location = new System.Drawing.Point(95, 112);
             this.labelDevelopedBy.Name = "labelDevelopedBy";
-            this.labelDevelopedBy.Size = new System.Drawing.Size(191, 37);
+            this.labelDevelopedBy.Size = new System.Drawing.Size(207, 47);
             this.labelDevelopedBy.TabIndex = 2;
             this.labelDevelopedBy.Text = "Developed by:";
+            // 
+            // labelAhmerAfzal
+            // 
+            this.labelAhmerAfzal.AutoSize = true;
+            this.labelAhmerAfzal.Font = new System.Drawing.Font("Ribbon Heart", 150F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAhmerAfzal.ForeColor = System.Drawing.Color.DarkCyan;
+            this.labelAhmerAfzal.Location = new System.Drawing.Point(38, 181);
+            this.labelAhmerAfzal.Name = "labelAhmerAfzal";
+            this.labelAhmerAfzal.Size = new System.Drawing.Size(909, 233);
+            this.labelAhmerAfzal.TabIndex = 3;
+            this.labelAhmerAfzal.Text = "Ahmer Afzal";
             // 
             // AhmerUC
             // 
@@ -71,7 +71,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelAhmerAfzal;
         private System.Windows.Forms.Label labelDevelopedBy;
+        private System.Windows.Forms.Label labelAhmerAfzal;
     }
 }

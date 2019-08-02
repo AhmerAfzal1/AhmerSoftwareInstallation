@@ -15,6 +15,7 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         public PdfUC()
         {
             InitializeComponent();
+
             buttonFoxitAdvPDFEditor.Text = foxitAdvPDFEditor;
             buttonInfixPDFEditor.Text = infixPDFEditor;
             buttonPdfCreator.Text = pdfCreator;

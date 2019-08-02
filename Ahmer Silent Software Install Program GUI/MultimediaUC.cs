@@ -13,6 +13,7 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         public MultimediaUC()
         {
             InitializeComponent();
+
             buttonKLiteMegaCodecPack.Text = kLiteCodecPack;
             buttonMirillisSplash.Text = mirillisSplash;
             buttonMP3Tag.Text = mp3Tag;

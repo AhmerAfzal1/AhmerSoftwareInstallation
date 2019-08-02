@@ -82,6 +82,7 @@
             this.buttonAndroidStudio.TabIndex = 2;
             this.buttonAndroidStudio.Text = "button";
             this.buttonAndroidStudio.UseVisualStyleBackColor = false;
+            this.buttonAndroidStudio.Click += new System.EventHandler(this.ButtonAndroidStudio_Click);
             // 
             // buttonGpg
             // 
@@ -97,6 +98,7 @@
             this.buttonGpg.TabIndex = 5;
             this.buttonGpg.Text = "button";
             this.buttonGpg.UseVisualStyleBackColor = false;
+            this.buttonGpg.Click += new System.EventHandler(this.ButtonGpg_Click);
             // 
             // buttonPython
             // 
@@ -112,6 +114,7 @@
             this.buttonPython.TabIndex = 4;
             this.buttonPython.Text = "button";
             this.buttonPython.UseVisualStyleBackColor = false;
+            this.buttonPython.Click += new System.EventHandler(this.ButtonPython_Click);
             // 
             // buttonGit
             // 
@@ -127,6 +130,7 @@
             this.buttonGit.TabIndex = 3;
             this.buttonGit.Text = "button";
             this.buttonGit.UseVisualStyleBackColor = false;
+            this.buttonGit.Click += new System.EventHandler(this.ButtonGit_Click);
             // 
             // DeveloperUC
             // 

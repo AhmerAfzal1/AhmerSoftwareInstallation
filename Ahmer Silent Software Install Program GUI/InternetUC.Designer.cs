@@ -52,6 +52,7 @@
             this.buttonNetLimiter.TabIndex = 11;
             this.buttonNetLimiter.Text = "button";
             this.buttonNetLimiter.UseVisualStyleBackColor = false;
+            this.buttonNetLimiter.Click += new System.EventHandler(this.ButtonNetLimiter_Click);
             // 
             // buttonBetternetVPN
             // 
@@ -67,6 +68,7 @@
             this.buttonBetternetVPN.TabIndex = 10;
             this.buttonBetternetVPN.Text = "button";
             this.buttonBetternetVPN.UseVisualStyleBackColor = false;
+            this.buttonBetternetVPN.Click += new System.EventHandler(this.ButtonBetternetVPN_Click);
             // 
             // buttonFlashPlayer
             // 
@@ -82,6 +84,7 @@
             this.buttonFlashPlayer.TabIndex = 9;
             this.buttonFlashPlayer.Text = "button";
             this.buttonFlashPlayer.UseVisualStyleBackColor = false;
+            this.buttonFlashPlayer.Click += new System.EventHandler(this.ButtonFlashPlayer_Click);
             // 
             // buttonIDM
             // 
@@ -97,6 +100,7 @@
             this.buttonIDM.TabIndex = 8;
             this.buttonIDM.Text = "button";
             this.buttonIDM.UseVisualStyleBackColor = false;
+            this.buttonIDM.Click += new System.EventHandler(this.ButtonIDM_Click);
             // 
             // buttonGoogleChrome
             // 
@@ -112,6 +116,7 @@
             this.buttonGoogleChrome.TabIndex = 7;
             this.buttonGoogleChrome.Text = "button";
             this.buttonGoogleChrome.UseVisualStyleBackColor = false;
+            this.buttonGoogleChrome.Click += new System.EventHandler(this.ButtonGoogleChrome_Click);
             // 
             // buttonFireFox
             // 
@@ -143,6 +148,7 @@
             this.buttonUTorrent.TabIndex = 13;
             this.buttonUTorrent.Text = "button";
             this.buttonUTorrent.UseVisualStyleBackColor = false;
+            this.buttonUTorrent.Click += new System.EventHandler(this.ButtonUTorrent_Click);
             // 
             // buttonTorBrowser
             // 
@@ -158,6 +164,7 @@
             this.buttonTorBrowser.TabIndex = 12;
             this.buttonTorBrowser.Text = "button";
             this.buttonTorBrowser.UseVisualStyleBackColor = false;
+            this.buttonTorBrowser.Click += new System.EventHandler(this.ButtonTorBrowser_Click);
             // 
             // InternetUC
             // 

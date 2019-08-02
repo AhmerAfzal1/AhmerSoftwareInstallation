@@ -55,6 +55,7 @@
             this.buttonSevenZip.TabIndex = 21;
             this.buttonSevenZip.Text = "button";
             this.buttonSevenZip.UseVisualStyleBackColor = false;
+            this.buttonSevenZip.Click += new System.EventHandler(this.ButtonSevenZip_Click);
             // 
             // buttonEngToUrduDic
             // 
@@ -70,6 +71,7 @@
             this.buttonEngToUrduDic.TabIndex = 20;
             this.buttonEngToUrduDic.Text = "button";
             this.buttonEngToUrduDic.UseVisualStyleBackColor = false;
+            this.buttonEngToUrduDic.Click += new System.EventHandler(this.ButtonEngToUrduDic_Click);
             // 
             // buttonAomeiPartition
             // 
@@ -85,6 +87,7 @@
             this.buttonAomeiPartition.TabIndex = 19;
             this.buttonAomeiPartition.Text = "button";
             this.buttonAomeiPartition.UseVisualStyleBackColor = false;
+            this.buttonAomeiPartition.Click += new System.EventHandler(this.ButtonAomeiPartition_Click);
             // 
             // buttonVSRedistributable
             // 
@@ -100,6 +103,7 @@
             this.buttonVSRedistributable.TabIndex = 18;
             this.buttonVSRedistributable.Text = "button";
             this.buttonVSRedistributable.UseVisualStyleBackColor = false;
+            this.buttonVSRedistributable.Click += new System.EventHandler(this.ButtonVSRedistributable_Click);
             // 
             // buttonPowerISO
             // 
@@ -115,6 +119,7 @@
             this.buttonPowerISO.TabIndex = 17;
             this.buttonPowerISO.Text = "button";
             this.buttonPowerISO.UseVisualStyleBackColor = false;
+            this.buttonPowerISO.Click += new System.EventHandler(this.ButtonPowerISO_Click);
             // 
             // buttonNotepadPlusPlus
             // 
@@ -130,6 +135,7 @@
             this.buttonNotepadPlusPlus.TabIndex = 16;
             this.buttonNotepadPlusPlus.Text = "button";
             this.buttonNotepadPlusPlus.UseVisualStyleBackColor = false;
+            this.buttonNotepadPlusPlus.Click += new System.EventHandler(this.ButtonNotepadPlusPlus_Click);
             // 
             // buttonWinRAR
             // 
@@ -145,6 +151,7 @@
             this.buttonWinRAR.TabIndex = 15;
             this.buttonWinRAR.Text = "button";
             this.buttonWinRAR.UseVisualStyleBackColor = false;
+            this.buttonWinRAR.Click += new System.EventHandler(this.ButtonWinRAR_Click);
             // 
             // buttonCCleaner
             // 
@@ -176,6 +183,7 @@
             this.buttonCPUz.TabIndex = 22;
             this.buttonCPUz.Text = "button";
             this.buttonCPUz.UseVisualStyleBackColor = false;
+            this.buttonCPUz.Click += new System.EventHandler(this.ButtonCPUz_Click);
             // 
             // buttonRufus
             // 
@@ -191,6 +199,7 @@
             this.buttonRufus.TabIndex = 24;
             this.buttonRufus.Text = "button";
             this.buttonRufus.UseVisualStyleBackColor = false;
+            this.buttonRufus.Click += new System.EventHandler(this.ButtonRufus_Click);
             // 
             // buttonHWiNFO
             // 

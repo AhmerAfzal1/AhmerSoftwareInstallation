@@ -259,7 +259,7 @@
             // 
             // labelTitle
             // 
-            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.Location = new System.Drawing.Point(3, 3);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(975, 64);
@@ -336,7 +336,7 @@
             this.labelProgressTotal.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.labelProgressTotal.Location = new System.Drawing.Point(14, 136);
             this.labelProgressTotal.Name = "labelProgressTotal";
-            this.labelProgressTotal.Size = new System.Drawing.Size(107, 19);
+            this.labelProgressTotal.Size = new System.Drawing.Size(106, 19);
             this.labelProgressTotal.TabIndex = 4;
             this.labelProgressTotal.Text = "Progress (Total):";
             // 

@@ -18,17 +18,52 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         {
             InitializeComponent();
 
-            buttonFlashPlayer.Text = adobeFlashPlayer;
             buttonBetternetVPN.Text = betterNetVPN;
+            buttonFireFox.Text = mozillaFirefox;
+            buttonFlashPlayer.Text = adobeFlashPlayer;
             buttonGoogleChrome.Text = googleChrome;
             buttonIDM.Text = internetDownloadManager;
-            buttonFireFox.Text = mozillaFirefox;
             buttonNetLimiter.Text = netLimiter;
             buttonTorBrowser.Text = torBrowser;
             buttonUTorrent.Text = uTorrent;
         }
 
         private void ButtonFireFox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonGoogleChrome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonIDM_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonFlashPlayer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonBetternetVPN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonNetLimiter_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonTorBrowser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonUTorrent_Click(object sender, EventArgs e)
         {
 
         }
