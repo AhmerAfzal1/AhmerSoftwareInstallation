@@ -246,6 +246,7 @@
             this.buttonAutoInstall.TabIndex = 0;
             this.buttonAutoInstall.Text = "button1";
             this.buttonAutoInstall.UseVisualStyleBackColor = false;
+            this.buttonAutoInstall.Click += new System.EventHandler(this.ButtonAutoInstall_Click);
             // 
             // panelTop
             // 

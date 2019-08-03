@@ -76,7 +76,17 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             installBackgroundWorker.RunWorkerCompleted += InstallBackgroundWorker_RunWorkerCompleted;
             installBackgroundWorker.WorkerReportsProgress = true;
         }
-
+        private void ButtonAutoInstall_Click(object sender, EventArgs e)
+        {
+            DeveloperUC.JavaJDK8();
+            DeveloperUC.Git();
+            InternetUC.IDM();
+            InternetUC.Firefox();
+            MultimediaUC.KLiteMegaCodecPack();
+            UtilitiesUC.CCleaner();
+            UtilitiesUC.NotepadPlusPlus();
+            UtilitiesUC.WinRAR();
+        }
         private void ButtonDeveloper_Click(object sender, EventArgs e)
         {
             labelSoftwareCategory.Text = titleDeveloper;
