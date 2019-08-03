@@ -24,7 +24,59 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
 
         private void ButtonAcrobatProDC_Click(object sender, EventArgs e)
         {
+            AcrobatProDC();
+        }
 
+        private void ButtonAcrobatReaderDC_Click(object sender, EventArgs e)
+        {
+            AcrobatReaderDC();
+        }
+
+        private void ButtonAdobePhotoshop_Click(object sender, EventArgs e)
+        {
+            Photoshop();
+        }
+
+        private void ButtonCorelDraw_Click(object sender, EventArgs e)
+        {
+            CorelDraw();
+        }
+
+        private void ButtonDotNetFrameWork_Click(object sender, EventArgs e)
+        {
+            DotNetFrameWork();
+        }
+
+        public static void AcrobatProDC()
+        {
+            string zipFile = Constants.FolderMajor + adobeAcrobatProDC + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(adobeAcrobatProDC, "Setup.exe", "/S /AUTO", null, false);
+        }
+
+        public static void AcrobatReaderDC()
+        {
+            string zipFile = Constants.FolderMajor + adobeAcrobatReaderDC + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(adobeAcrobatReaderDC, "Setup.exe", "/S", null, false);
+        }
+        public static void Photoshop()
+        {
+            string zipFile = Constants.FolderMajor + adobePhotoshop + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(adobePhotoshop, "Setup.exe", "-S /XDISABLENET=1", null, false);
+        }
+        public static void CorelDraw()
+        {
+            string zipFile = Constants.FolderMajor + corelDraw + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(corelDraw, "Setup.exe", "/S", null, false);
+        }
+        public static void DotNetFrameWork()
+        {
+            string zipFile = Constants.FolderMajor + msDotNetFramework + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(msDotNetFramework, "Setup.exe", "/lcid 1033 /norestart /passive /showfinalerror", null, false);
         }
     }
 }

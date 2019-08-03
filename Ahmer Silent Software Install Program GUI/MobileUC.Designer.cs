@@ -48,6 +48,7 @@
             this.buttoniTunes.TabIndex = 9;
             this.buttoniTunes.Text = "button";
             this.buttoniTunes.UseVisualStyleBackColor = false;
+            this.buttoniTunes.Click += new System.EventHandler(this.ButtoniTunes_Click);
             // 
             // buttonSamsungUSBDriver
             // 
@@ -63,6 +64,7 @@
             this.buttonSamsungUSBDriver.TabIndex = 8;
             this.buttonSamsungUSBDriver.Text = "button";
             this.buttonSamsungUSBDriver.UseVisualStyleBackColor = false;
+            this.buttonSamsungUSBDriver.Click += new System.EventHandler(this.ButtonSamsungUSBDriver_Click);
             // 
             // buttonSideSync
             // 
@@ -78,6 +80,7 @@
             this.buttonSideSync.TabIndex = 7;
             this.buttonSideSync.Text = "button";
             this.buttonSideSync.UseVisualStyleBackColor = false;
+            this.buttonSideSync.Click += new System.EventHandler(this.ButtonSideSync_Click);
             // 
             // buttonSmartSwitch
             // 

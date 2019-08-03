@@ -22,7 +22,48 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
 
         private void ButtonSmartSwitch_Click(object sender, EventArgs e)
         {
+            SmartSwitch();
+        }
 
+        private void ButtonSideSync_Click(object sender, EventArgs e)
+        {
+            SideSync();
+        }
+
+        private void ButtonSamsungUSBDriver_Click(object sender, EventArgs e)
+        {
+            SumsungUSBDriver();
+        }
+
+        private void ButtoniTunes_Click(object sender, EventArgs e)
+        {
+            Itunes();
+        }
+
+        public static void SmartSwitch()
+        {
+            string zipFile = Constants.FolderMobile + smartSwitch + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(smartSwitch, "Setup.exe", "/S", null, false);
+        }
+
+        public static void SideSync()
+        {
+            string zipFile = Constants.FolderMobile + sideSync + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(sideSync, "Setup.exe", "/S", null, false);
+        }
+        public static void SumsungUSBDriver()
+        {
+            string zipFile = Constants.FolderMobile + samsungUSBDriver + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(samsungUSBDriver, "Setup.exe", "/S", null, false);
+        }
+        public static void Itunes()
+        {
+            string zipFile = Constants.FolderMobile + iTunes + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(iTunes, "Setup.exe", "/qn /norestart", null, false);
         }
     }
 }

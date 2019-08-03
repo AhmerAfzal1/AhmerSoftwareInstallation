@@ -22,7 +22,47 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
 
         private void ButtonKLiteMegaCodecPack_Click(object sender, EventArgs e)
         {
+            KLiteMegaCodecPack();
+        }
 
+        private void ButtonMP3Tag_Click(object sender, EventArgs e)
+        {
+            MP3Tag();
+        }
+
+        private void ButtonMirillisSplash_Click(object sender, EventArgs e)
+        {
+            MirillishSplash();
+        }
+
+        private void ButtonMPCHC_Click(object sender, EventArgs e)
+        {
+            MPChC();
+        }
+
+        public static void KLiteMegaCodecPack()
+        {
+            string zipFile = Constants.FolderMultimedia + kLiteCodecPack + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(kLiteCodecPack, "Setup.exe", "klcp_mega_unattended.bat", null, false);
+        }
+        public static void MP3Tag()
+        {
+            string zipFile = Constants.FolderMultimedia + mp3Tag + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(mp3Tag, "Setup.exe", "/S", null, false);
+        }
+        public static void MirillishSplash()
+        {
+            string zipFile = Constants.FolderMultimedia + mirillisSplash+ Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(mirillisSplash, "Setup.exe", "/S /EN", null, false);
+        }
+        public static void MPChC()
+        {
+            string zipFile = Constants.FolderMultimedia + mpcHC + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(mpcHC, "Setup.exe", "/S /I", null, false);
         }
     }
 }

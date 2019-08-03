@@ -26,7 +26,73 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
 
         private void ButtonFoxitAdvPDFEditor_Click(object sender, EventArgs e)
         {
+            FoxitAdvPDFEditor();
+        }
 
+        private void ButtonInfixPDFEditor_Click(object sender, EventArgs e)
+        {
+            InfixPDFEditor();
+        }
+
+        private void ButtonPdfCreator_Click(object sender, EventArgs e)
+        {
+            PdfCreator();
+        }
+
+        private void ButtonPdfToJPG_Click(object sender, EventArgs e)
+        {
+            PdfToJPG();
+        }
+
+        private void ButtonPdfToJPGConverter_Click(object sender, EventArgs e)
+        {
+            PdfToJPGConverter();
+        }
+
+        private void ButtonPdfShaper_Click(object sender, EventArgs e)
+        {
+            PdfShaper();
+        }
+
+        public static void FoxitAdvPDFEditor()
+        {
+            string zipFile = Constants.FolderPDF + foxitAdvPDFEditor + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(foxitAdvPDFEditor, "Setup.exe", "/S", null, false);
+        }
+
+        public static void InfixPDFEditor()
+        {
+            string zipFile = Constants.FolderPDF + infixPDFEditor + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(infixPDFEditor, "Setup.exe", "/S /EN", null, false);
+        }
+        public static void PdfToJPG()
+        {
+            string zipFile = Constants.FolderPDF + pdfToJPG + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(pdfToJPG, "Setup.exe", "/silent", null, false);
+        }
+
+        public static void PdfToJPGConverter()
+        {
+            string zipFile = Constants.FolderPDF + pdfToJPGConverter + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(pdfToJPGConverter, "Setup.exe", "/silent", null, false);
+        }
+
+        public static void PdfShaper()
+        {
+            string zipFile = Constants.FolderPDF + pdfShaper + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(pdfShaper, "Setup.exe", "/silent", null, false);
+        }
+
+        public static void PdfCreator()
+        {
+            string zipFile = Constants.FolderPDF + pdfCreator + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(pdfCreator, "Setup.exe", "/SILENT /NORESTART /NOCLOSEAPPLICATIONS /NORESTARTAPPLICATIONS", null, false);
         }
     }
 }

@@ -2,6 +2,8 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Security;
 using System.Threading;
 using System.Windows.Forms;
@@ -39,6 +41,8 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         public MainProgram()
         {
             InitializeComponent();
+            AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(Load_Assembly);
+
             labelSoftwareCategory.Text = "";
             this.ahmerUC1.BringToFront();
 
@@ -119,6 +123,21 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         {
             labelSoftwareCategory.Text = "";
             this.ahmerUC1.BringToFront();
+        }
+
+        static Assembly Load_Assembly(object sender, ResolveEventArgs args)
+        {
+            String dllName = new AssemblyName(args.Name).Name + ".dll";
+            var assembly = Assembly.GetExecutingAssembly();
+            String resourceName = assembly.GetManifestResourceNames().FirstOrDefault(rn => rn.EndsWith(dllName));
+            if (resourceName == null) return null; // Not found, maybe another handler will find it
+            using (var stream = assembly.GetManifestResourceStream(resourceName))
+            {
+                Byte[] assemblyData = new Byte[stream.Length];
+                stream.Read(assemblyData, 0, assemblyData.Length);
+                return Assembly.Load(assemblyData);
+            }
+
         }
 
         private void ExtractFile_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

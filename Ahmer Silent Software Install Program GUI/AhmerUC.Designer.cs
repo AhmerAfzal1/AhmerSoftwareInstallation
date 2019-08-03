@@ -45,14 +45,14 @@
             // 
             // labelAhmerAfzal
             // 
-            this.labelAhmerAfzal.AutoSize = true;
-            this.labelAhmerAfzal.Font = new System.Drawing.Font("Ribbon Heart", 150F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAhmerAfzal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAhmerAfzal.ForeColor = System.Drawing.Color.DarkCyan;
-            this.labelAhmerAfzal.Location = new System.Drawing.Point(38, 181);
+            this.labelAhmerAfzal.Location = new System.Drawing.Point(3, 185);
             this.labelAhmerAfzal.Name = "labelAhmerAfzal";
-            this.labelAhmerAfzal.Size = new System.Drawing.Size(909, 233);
+            this.labelAhmerAfzal.Size = new System.Drawing.Size(978, 226);
             this.labelAhmerAfzal.TabIndex = 3;
             this.labelAhmerAfzal.Text = "Ahmer Afzal";
+            this.labelAhmerAfzal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AhmerUC
             // 
@@ -64,6 +64,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.Name = "AhmerUC";
             this.Size = new System.Drawing.Size(984, 527);
+            this.Load += new System.EventHandler(this.AhmerUC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

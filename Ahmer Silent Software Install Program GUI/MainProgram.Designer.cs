@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainProgram));
             this.panelLeftSide = new System.Windows.Forms.Panel();
             this.buttonAhmer = new System.Windows.Forms.Button();
             this.buttonUtilities = new System.Windows.Forms.Button();
@@ -336,7 +337,7 @@
             this.labelProgressTotal.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.labelProgressTotal.Location = new System.Drawing.Point(14, 136);
             this.labelProgressTotal.Name = "labelProgressTotal";
-            this.labelProgressTotal.Size = new System.Drawing.Size(106, 19);
+            this.labelProgressTotal.Size = new System.Drawing.Size(107, 19);
             this.labelProgressTotal.TabIndex = 4;
             this.labelProgressTotal.Text = "Progress (Total):";
             // 
@@ -495,6 +496,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainProgram";
             this.Text = "Ahmer\'s Automatically And Silently Softwares Installation Program GUI";

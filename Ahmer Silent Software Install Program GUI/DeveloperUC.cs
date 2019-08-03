@@ -28,44 +28,74 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
 
         private void ButtonJavaJDK8_Click(object sender, EventArgs e)
         {
+            JavaJDK8();
+        }
+
+        private void ButtonJavaJDK12_Click(object sender, EventArgs e)
+        {
+            JavaJDK12();
+        }
+
+        private void ButtonAndroidStudio_Click(object sender, EventArgs e)
+        {
+            AndroidStudio();
+        }
+
+        private void ButtonGit_Click(object sender, EventArgs e)
+        {
+            Git();
+        }
+
+        private void ButtonPython_Click(object sender, EventArgs e)
+        {
+            Python();
+        }
+
+        private void ButtonGpg_Click(object sender, EventArgs e)
+        {
+            Gpg();
+        }
+
+        public static void JavaJDK8()
+        {
             string zipFile = Constants.FolderDeveloper + javaJDK8 + Constants.ZipExtension;
             MainProgram.GetSetShowProgramFile = zipFile;
             MainProgram.ProgressAsync(javaJDK8, "Setup.exe", "/s ADDLOCAL=\"ToolsFeature,SourceFeature,PublicjreFeature\"", null, false);
         }
 
-        private void ButtonJavaJDK12_Click(object sender, EventArgs e)
+        public static void JavaJDK12()
         {
             string zipFile = Constants.FolderDeveloper + javaJDK12 + Constants.ZipExtension;
             MainProgram.GetSetShowProgramFile = zipFile;
             MainProgram.ProgressAsync(javaJDK12, "Setup.exe", "/s ADDLOCAL=\"ToolsFeature,SourceFeature,PublicjreFeature\"", null, false);
         }
 
-        private void ButtonAndroidStudio_Click(object sender, EventArgs e)
+        public static void AndroidStudio()
         {
             string zipFile = Constants.FolderDeveloper + androidStudio + Constants.ZipExtension;
             MainProgram.GetSetShowProgramFile = zipFile;
             MainProgram.ProgressAsync(androidStudio, "Setup.exe", "/S /Allusers", null, false);
         }
 
-        private void ButtonGit_Click(object sender, EventArgs e)
+        public static void Git()
         {
             string zipFile = Constants.FolderDeveloper + git + Constants.ZipExtension;
             MainProgram.GetSetShowProgramFile = zipFile;
             MainProgram.ProgressAsync(git, "Setup.exe", "/VERYSILENT /NORESTART /NOCANCEL /SP- /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /COMPONENTS=\"icons,icons\\desktop,ext\\reg,ext\\reg\\shellhere,assoc,assoc_sh,consolefont\"", null, false);
         }
 
-        private void ButtonPython_Click(object sender, EventArgs e)
-        {
-            string zipFile = Constants.FolderDeveloper + python + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(python, "Setup.exe", "/passive InstallAllUsers=1 PrependPath=1 CompileAll=1", null, false);
-        }
-
-        private void ButtonGpg_Click(object sender, EventArgs e)
+        public static void Gpg()
         {
             string zipFile = Constants.FolderDeveloper + gpg4Win + Constants.ZipExtension;
             MainProgram.GetSetShowProgramFile = zipFile;
             MainProgram.ProgressAsync(gpg4Win, "Setup.exe", "/S", null, false);
+        }
+
+        public static void Python()
+        {
+            string zipFile = Constants.FolderDeveloper + python + Constants.ZipExtension;
+            MainProgram.GetSetShowProgramFile = zipFile;
+            MainProgram.ProgressAsync(python, "Setup.exe", "/passive InstallAllUsers=1 PrependPath=1 CompileAll=1", null, false);
         }
     }
 }

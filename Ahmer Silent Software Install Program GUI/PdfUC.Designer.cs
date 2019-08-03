@@ -50,6 +50,7 @@
             this.buttonPdfShaper.TabIndex = 11;
             this.buttonPdfShaper.Text = "button";
             this.buttonPdfShaper.UseVisualStyleBackColor = false;
+            this.buttonPdfShaper.Click += new System.EventHandler(this.ButtonPdfShaper_Click);
             // 
             // buttonPdfToJPGConverter
             // 
@@ -65,6 +66,7 @@
             this.buttonPdfToJPGConverter.TabIndex = 10;
             this.buttonPdfToJPGConverter.Text = "button";
             this.buttonPdfToJPGConverter.UseVisualStyleBackColor = false;
+            this.buttonPdfToJPGConverter.Click += new System.EventHandler(this.ButtonPdfToJPGConverter_Click);
             // 
             // buttonPdfToJPG
             // 
@@ -80,6 +82,7 @@
             this.buttonPdfToJPG.TabIndex = 9;
             this.buttonPdfToJPG.Text = "button";
             this.buttonPdfToJPG.UseVisualStyleBackColor = false;
+            this.buttonPdfToJPG.Click += new System.EventHandler(this.ButtonPdfToJPG_Click);
             // 
             // buttonPdfCreator
             // 
@@ -95,6 +98,7 @@
             this.buttonPdfCreator.TabIndex = 8;
             this.buttonPdfCreator.Text = "button";
             this.buttonPdfCreator.UseVisualStyleBackColor = false;
+            this.buttonPdfCreator.Click += new System.EventHandler(this.ButtonPdfCreator_Click);
             // 
             // buttonInfixPDFEditor
             // 
@@ -110,6 +114,7 @@
             this.buttonInfixPDFEditor.TabIndex = 7;
             this.buttonInfixPDFEditor.Text = "button";
             this.buttonInfixPDFEditor.UseVisualStyleBackColor = false;
+            this.buttonInfixPDFEditor.Click += new System.EventHandler(this.ButtonInfixPDFEditor_Click);
             // 
             // buttonFoxitAdvPDFEditor
             // 

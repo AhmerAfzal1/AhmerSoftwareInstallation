@@ -49,6 +49,7 @@
             this.buttonDotNetFrameWork.TabIndex = 10;
             this.buttonDotNetFrameWork.Text = "button";
             this.buttonDotNetFrameWork.UseVisualStyleBackColor = false;
+            this.buttonDotNetFrameWork.Click += new System.EventHandler(this.ButtonDotNetFrameWork_Click);
             // 
             // buttonCorelDraw
             // 
@@ -64,6 +65,7 @@
             this.buttonCorelDraw.TabIndex = 9;
             this.buttonCorelDraw.Text = "button";
             this.buttonCorelDraw.UseVisualStyleBackColor = false;
+            this.buttonCorelDraw.Click += new System.EventHandler(this.ButtonCorelDraw_Click);
             // 
             // buttonAdobePhotoshop
             // 
@@ -79,6 +81,7 @@
             this.buttonAdobePhotoshop.TabIndex = 8;
             this.buttonAdobePhotoshop.Text = "button";
             this.buttonAdobePhotoshop.UseVisualStyleBackColor = false;
+            this.buttonAdobePhotoshop.Click += new System.EventHandler(this.ButtonAdobePhotoshop_Click);
             // 
             // buttonAcrobatReaderDC
             // 
@@ -94,6 +97,7 @@
             this.buttonAcrobatReaderDC.TabIndex = 7;
             this.buttonAcrobatReaderDC.Text = "button";
             this.buttonAcrobatReaderDC.UseVisualStyleBackColor = false;
+            this.buttonAcrobatReaderDC.Click += new System.EventHandler(this.ButtonAcrobatReaderDC_Click);
             // 
             // buttonAcrobatProDC
             // 

@@ -48,6 +48,7 @@
             this.buttonMPCHC.TabIndex = 13;
             this.buttonMPCHC.Text = "button";
             this.buttonMPCHC.UseVisualStyleBackColor = false;
+            this.buttonMPCHC.Click += new System.EventHandler(this.ButtonMPCHC_Click);
             // 
             // buttonMirillisSplash
             // 
@@ -63,6 +64,7 @@
             this.buttonMirillisSplash.TabIndex = 12;
             this.buttonMirillisSplash.Text = "button";
             this.buttonMirillisSplash.UseVisualStyleBackColor = false;
+            this.buttonMirillisSplash.Click += new System.EventHandler(this.ButtonMirillisSplash_Click);
             // 
             // buttonMP3Tag
             // 
@@ -78,6 +80,7 @@
             this.buttonMP3Tag.TabIndex = 11;
             this.buttonMP3Tag.Text = "button";
             this.buttonMP3Tag.UseVisualStyleBackColor = false;
+            this.buttonMP3Tag.Click += new System.EventHandler(this.ButtonMP3Tag_Click);
             // 
             // buttonKLiteMegaCodecPack
             // 
