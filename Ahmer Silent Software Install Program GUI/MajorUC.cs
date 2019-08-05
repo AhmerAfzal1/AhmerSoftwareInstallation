@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Ahmer_Silent_Software_Install_Program_GUI
@@ -50,33 +51,68 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         public static void AcrobatProDC()
         {
             string zipFile = Constants.FolderMajor + adobeAcrobatProDC + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(adobeAcrobatProDC, "Setup.exe", "/S /AUTO", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(adobeAcrobatProDC, "Setup.exe", "/S /AUTO", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
 
         public static void AcrobatReaderDC()
         {
             string zipFile = Constants.FolderMajor + adobeAcrobatReaderDC + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(adobeAcrobatReaderDC, "Setup.exe", "/S", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(adobeAcrobatReaderDC, "Setup.exe", "/S", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
         public static void Photoshop()
         {
             string zipFile = Constants.FolderMajor + adobePhotoshop + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(adobePhotoshop, "Setup.exe", "-S /XDISABLENET=1", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(adobePhotoshop, "Setup.exe", "-S /XDISABLENET=1", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
         public static void CorelDraw()
         {
             string zipFile = Constants.FolderMajor + corelDraw + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(corelDraw, "Setup.exe", "/S", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(corelDraw, "Setup.exe", "/S", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
         public static void DotNetFrameWork()
         {
             string zipFile = Constants.FolderMajor + msDotNetFramework + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(msDotNetFramework, "Setup.exe", "/lcid 1033 /norestart /passive /showfinalerror", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(msDotNetFramework, "Setup.exe", "/lcid 1033 /norestart /passive /showfinalerror", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
     }
 }

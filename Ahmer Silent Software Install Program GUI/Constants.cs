@@ -59,5 +59,10 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         {
             MessageBox.Show(s, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        public static void MessageBoxExceptionFileExist(string s)
+        {
+            MessageBox.Show("The file or path "+"\"" + s + "\"" + " does not exist. Please verify the filename or folder path.", "Error",  MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

@@ -97,87 +97,164 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         public static void CCleaner()
         {
             string zipFile = Constants.FolderUtilities + cCleaner + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(cCleaner, "Setup.exe", "/S /IB /TM", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(cCleaner, "Setup.exe", "/S /IB /TM", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
 
         public static void HWiNFO()
         {
             string zipFile = Constants.FolderUtilities + hwInfo + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(hwInfo, "HWiNFO64.exe", null, null, true);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(hwInfo, "HWiNFO64.exe", null, null, true);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
 
         public static void Rufus()
         {
             string zipFile = Constants.FolderUtilities + rufus + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(rufus, "Rufus.exe", null, null, true);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(rufus, "Rufus.exe", null, null, true);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
 
         public static void CPUz()
         {
             string zipFile = Constants.FolderUtilities + cpuZ + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(cpuZ, "Setup.exe", "/SILENT", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(cpuZ, "Setup.exe", "/SILENT", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
 
         public static void WinRAR()
         {
             string zipFile = Constants.SoftwareFolder + winRAR + "\\" + winRAR + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(winRAR, "Setup.exe", "/S /IEN", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(winRAR, "Setup.exe", "/S /IEN", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
 
         public static void NotepadPlusPlus()
         {
             string zipFile = Constants.FolderUtilities + notepadPlusPlus + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(notepadPlusPlus, "Setup.exe", "/S", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(notepadPlusPlus, "Setup.exe", "/S", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
 
         public static void PowerISO()
         {
             string zipFile = Constants.FolderUtilities + powerISO + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(powerISO, "Setup.exe", "/S /Q", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(powerISO, "Setup.exe", "/S /Q", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
 
         public static void VSRedistributable()
         {
             string zipFile = Constants.FolderUtilities + vsRedistributable + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(vsRedistributable, "Setup_2008_x64.exe", "/lang 1033 /q", null, false);
-            MainProgram.ProgressAsync(vsRedistributable, "Setup_2008_x86.exe", "/lang 1033 /q", null, false);
-            MainProgram.ProgressAsync(vsRedistributable, "Setup_2010_x64.exe", "/lcid 1033 /norestart /passive", null, false);
-            MainProgram.ProgressAsync(vsRedistributable, "Setup_2010_x86.exe", "/lcid 1033 /norestart /passive", null, false);
-            MainProgram.ProgressAsync(vsRedistributable, "Setup_2012_x64.exe", "/install /passive /norestart", null, false);
-            MainProgram.ProgressAsync(vsRedistributable, "Setup_2012_x86.exe", "/install /passive /norestart", null, false);
-            MainProgram.ProgressAsync(vsRedistributable, "Setup_2013_x64.exe", "/install /passive /norestart", null, false);
-            MainProgram.ProgressAsync(vsRedistributable, "Setup_2013_x86.exe", "/install /passive /norestart", null, false);
-            MainProgram.ProgressAsync(vsRedistributable, "Setup_2015_17_19_x64.exe", "/install /passive /norestart", null, false);
-            MainProgram.ProgressAsync(vsRedistributable, "Setup_2015_17_19_x86.exe", "/install /passive /norestart", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(vsRedistributable, "Setup_2008_x64.exe", "/lang 1033 /q", null, false);
+                MainProgram.ProgressAsync(vsRedistributable, "Setup_2008_x86.exe", "/lang 1033 /q", null, false);
+                MainProgram.ProgressAsync(vsRedistributable, "Setup_2010_x64.exe", "/lcid 1033 /norestart /passive", null, false);
+                MainProgram.ProgressAsync(vsRedistributable, "Setup_2010_x86.exe", "/lcid 1033 /norestart /passive", null, false);
+                MainProgram.ProgressAsync(vsRedistributable, "Setup_2012_x64.exe", "/install /passive /norestart", null, false);
+                MainProgram.ProgressAsync(vsRedistributable, "Setup_2012_x86.exe", "/install /passive /norestart", null, false);
+                MainProgram.ProgressAsync(vsRedistributable, "Setup_2013_x64.exe", "/install /passive /norestart", null, false);
+                MainProgram.ProgressAsync(vsRedistributable, "Setup_2013_x86.exe", "/install /passive /norestart", null, false);
+                MainProgram.ProgressAsync(vsRedistributable, "Setup_2015_17_19_x64.exe", "/install /passive /norestart", null, false);
+                MainProgram.ProgressAsync(vsRedistributable, "Setup_2015_17_19_x86.exe", "/install /passive /norestart", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
 
         public static void AomeiPartition()
         {
             string zipFile = Constants.FolderUtilities + aomeiPartition + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(aomeiPartition, "Setup.exe", "/S /Q", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(aomeiPartition, "Setup.exe", "/S /Q", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
 
         public static void EngToUrduDic()
         {
             string zipFile = Constants.FolderUtilities + engToUrduDic + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(engToUrduDic, "Setup.exe", "/S", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(engToUrduDic, "Setup.exe", "/S", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
 
         public static void SevenZip()
         {
             string zipFile = Constants.FolderUtilities + sevenZip + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(sevenZip, "Setup.exe", "/S", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(sevenZip, "Setup.exe", "/S", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
     }
 }

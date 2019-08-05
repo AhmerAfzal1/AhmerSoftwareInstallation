@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Ahmer_Silent_Software_Install_Program_GUI
@@ -43,26 +44,54 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         public static void KLiteMegaCodecPack()
         {
             string zipFile = Constants.FolderMultimedia + kLiteCodecPack + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(kLiteCodecPack, "Setup.exe", "klcp_mega_unattended.bat", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(kLiteCodecPack, "Setup.exe", "klcp_mega_unattended.bat", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
         public static void MP3Tag()
         {
             string zipFile = Constants.FolderMultimedia + mp3Tag + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(mp3Tag, "Setup.exe", "/S", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(mp3Tag, "Setup.exe", "/S", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
         public static void MirillishSplash()
         {
-            string zipFile = Constants.FolderMultimedia + mirillisSplash+ Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(mirillisSplash, "Setup.exe", "/S /EN", null, false);
+            string zipFile = Constants.FolderMultimedia + mirillisSplash + Constants.ZipExtension;
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(mirillisSplash, "Setup.exe", "/S /EN", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
         public static void MPChC()
         {
             string zipFile = Constants.FolderMultimedia + mpcHC + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(mpcHC, "Setup.exe", "/S /I", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(mpcHC, "Setup.exe", "/S /I", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
     }
 }

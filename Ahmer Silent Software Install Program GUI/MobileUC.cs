@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Ahmer_Silent_Software_Install_Program_GUI
@@ -43,27 +44,56 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         public static void SmartSwitch()
         {
             string zipFile = Constants.FolderMobile + smartSwitch + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(smartSwitch, "Setup.exe", "/S", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(smartSwitch, "Setup.exe", "/S", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
 
         public static void SideSync()
         {
             string zipFile = Constants.FolderMobile + sideSync + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(sideSync, "Setup.exe", "/S", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(sideSync, "Setup.exe", "/S", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
         public static void SumsungUSBDriver()
         {
             string zipFile = Constants.FolderMobile + samsungUSBDriver + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(samsungUSBDriver, "Setup.exe", "/S", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(samsungUSBDriver, "Setup.exe", "/S", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
         public static void Itunes()
         {
             string zipFile = Constants.FolderMobile + iTunes + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(iTunes, "Setup.exe", "/qn /norestart", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(iTunes, "Setup.exe", "/qn /norestart", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
+
         }
     }
 }

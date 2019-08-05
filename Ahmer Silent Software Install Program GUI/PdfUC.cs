@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Ahmer_Silent_Software_Install_Program_GUI
@@ -57,42 +58,84 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         public static void FoxitAdvPDFEditor()
         {
             string zipFile = Constants.FolderPDF + foxitAdvPDFEditor + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(foxitAdvPDFEditor, "Setup.exe", "/S", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(foxitAdvPDFEditor, "Setup.exe", "/S", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
 
         public static void InfixPDFEditor()
         {
             string zipFile = Constants.FolderPDF + infixPDFEditor + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(infixPDFEditor, "Setup.exe", "/S /EN", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(infixPDFEditor, "Setup.exe", "/S /EN", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
         public static void PdfToJPG()
         {
             string zipFile = Constants.FolderPDF + pdfToJPG + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(pdfToJPG, "Setup.exe", "/silent", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(pdfToJPG, "Setup.exe", "/silent", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
 
         public static void PdfToJPGConverter()
         {
             string zipFile = Constants.FolderPDF + pdfToJPGConverter + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(pdfToJPGConverter, "Setup.exe", "/silent", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(pdfToJPGConverter, "Setup.exe", "/silent", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
 
         public static void PdfShaper()
         {
             string zipFile = Constants.FolderPDF + pdfShaper + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(pdfShaper, "Setup.exe", "/silent", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(pdfShaper, "Setup.exe", "/silent", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
 
         public static void PdfCreator()
         {
             string zipFile = Constants.FolderPDF + pdfCreator + Constants.ZipExtension;
-            MainProgram.GetSetShowProgramFile = zipFile;
-            MainProgram.ProgressAsync(pdfCreator, "Setup.exe", "/SILENT /NORESTART /NOCLOSEAPPLICATIONS /NORESTARTAPPLICATIONS", null, false);
+            if (File.Exists(zipFile))
+            {
+                MainProgram.GetSetShowProgramFile = zipFile;
+                MainProgram.ProgressAsync(pdfCreator, "Setup.exe", "/SILENT /NORESTART /NOCLOSEAPPLICATIONS /NORESTARTAPPLICATIONS", null, false);
+            }
+            else
+            {
+                Constants.MessageBoxExceptionFileExist(zipFile);
+            }
         }
     }
 }

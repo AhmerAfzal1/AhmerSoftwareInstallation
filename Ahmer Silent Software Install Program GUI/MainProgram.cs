@@ -23,6 +23,7 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         private const string titlePDF = "PDF Softwares";
         private const string titleUtilities = "Utilities Softwares";
 
+        private event EventHandler extractBackgroundWorkFinished = null;
         private static BackgroundWorker extractBackgroundWorker = null;
         private static BackgroundWorker installBackgroundWorker = null;
         private static bool portable = false;
@@ -69,6 +70,7 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             extractBackgroundWorker.ProgressChanged += ExtractFile_ProgressChanged;
             extractBackgroundWorker.RunWorkerCompleted += ExtractFile_RunWorkerCompleted;
             extractBackgroundWorker.WorkerReportsProgress = true;
+            extractBackgroundWorkFinished += MainProgram_extractBackgroundWorkFinished;
 
             installBackgroundWorker = new BackgroundWorker();
             installBackgroundWorker.DoWork += InstallBackgroundWorker_DoWork;
@@ -76,6 +78,7 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             installBackgroundWorker.RunWorkerCompleted += InstallBackgroundWorker_RunWorkerCompleted;
             installBackgroundWorker.WorkerReportsProgress = true;
         }
+
         private void ButtonAutoInstall_Click(object sender, EventArgs e)
         {
             DeveloperUC.JavaJDK8();
@@ -147,30 +150,36 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
                 stream.Read(assemblyData, 0, assemblyData.Length);
                 return Assembly.Load(assemblyData);
             }
+        }
 
+        private void MainProgram_extractBackgroundWorkFinished(object sender, EventArgs e)
+        {
+            installBackgroundWorker.RunWorkerAsync();
         }
 
         private void ExtractFile_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             progressBarIndividual.Value = int.MaxValue;
             progressBarTotal.Value = int.MaxValue;
-            if (e.Error == null)
+            Thread.Sleep(1000);
+            if (this.extractBackgroundWorkFinished != null)
             {
-                installBackgroundWorker.RunWorkerAsync();
+                this.extractBackgroundWorkFinished(this, EventArgs.Empty);
             }
+
             //Constants.MessageBoxInformation("Extraction completed!");
         }
 
         private void ExtractFile_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             labelShowExtractingPath.Text = zipFileName;
+            GetSetShowShowDestination = tempfolder;
             progressBarIndividual.Value = e.ProgressPercentage;
 
             //Calculate the totalPercent
             long totalPercent = ((long)e.ProgressPercentage * zipCompressedSize + zipExtractedTotalSize * int.MaxValue) / zipFileSize;
             if (totalPercent > int.MaxValue) totalPercent = int.MaxValue;
             progressBarTotal.Value = (int)totalPercent;
-            GetSetShowShowDestination = tempfolder;
         }
 
         private void ExtractFile_DoWork(object sender, DoWorkEventArgs e)
