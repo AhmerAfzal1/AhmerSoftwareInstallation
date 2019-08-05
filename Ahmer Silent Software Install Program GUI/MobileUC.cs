@@ -6,10 +6,10 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
 {
     public partial class MobileUC : UserControl
     {
-        private const string iTunes = "iTunes 12.9.5.7";
-        private const string samsungUSBDriver = "Samsung USB Driver 1.5.65.0";
-        private const string sideSync = "SideSync 4.7.5.244";
-        private const string smartSwitch = "Smart Switch 4.2.18124.4";
+        private static string iTunes = Constants.iTunes;
+        private static string samsungUSBDriver = Constants.SamsungUSBDriver;
+        private static string sideSync = Constants.SideSync;
+        private static string smartSwitch = Constants.SmartSwitch;
 
         public MobileUC()
         {

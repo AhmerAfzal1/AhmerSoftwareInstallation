@@ -6,10 +6,10 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
 {
     public partial class MultimediaUC : UserControl
     {
-        private const string kLiteCodecPack = "K-Lite Mega Codec Pack 15.0.0";
-        private const string mpcHC = "Media Player Classic Home Cinema 1.8.7";
-        private const string mirillisSplash = "Mirillis Splash 2.7.0";
-        private const string mp3Tag = "Mp3Tag 2.96";
+        private static string kLiteCodecPack = Constants.KLiteCodecPack;
+        private static string mpcHC = Constants.MPCHC;
+        private static string mirillisSplash = Constants.MirillisSplash;
+        private static string mp3Tag = Constants.MP3Tag;
 
         public MultimediaUC()
         {

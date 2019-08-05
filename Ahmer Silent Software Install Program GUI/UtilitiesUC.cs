@@ -6,17 +6,17 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
 {
     public partial class UtilitiesUC : UserControl
     {
-        private const string aomeiPartition = "AOMEI Partition Assistant 8.3.0";
-        private const string cCleaner = "CCleaner 5.60.7307";
-        private const string cpuZ = "CPUZ 1.89";
-        private const string engToUrduDic = "Cleantouch English to Urdu Dictionary 7.0";
-        private const string hwInfo = "HWiNFO 6.08";
-        private const string notepadPlusPlus = "Notepad++ 7.7";
-        private const string powerISO = "PowerISO 7.4";
-        private const string rufus = "Rufus 3.5";
-        private const string sevenZip = "7-Zip 19.00";
-        private const string vsRedistributable = "Microsoft Visual C++ Redistributable";
-        private const string winRAR = "WinRAR 5.71";
+        private static string aomeiPartition = Constants.AomeiPartition;
+        private static string cCleaner = Constants.CCleaner;
+        private static string cpuZ = Constants.CPUz;
+        private static string engToUrduDic = Constants.EngToUrduDic;
+        private static string hwInfo = Constants.HWInfo;
+        private static string notepadPlusPlus = Constants.NotepadPlusPlus;
+        private static string powerISO = Constants.PowerISO;
+        private static string rufus = Constants.Rufus;
+        private static string sevenZip = Constants.SevenZip;
+        private static string vsRedistributable = Constants.VSRedistributable;
+        private static string winRAR = Constants.WinRAR;
 
         public UtilitiesUC()
         {

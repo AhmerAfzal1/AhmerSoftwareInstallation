@@ -6,14 +6,14 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
 {
     public partial class InternetUC : UserControl
     {
-        private const string adobeFlashPlayer = "Adobe Flash Player 32 Beta";
-        private const string betterNetVPN = "Betternet VPN 5.0.5";
-        private const string googleChrome = "Google Chrome 74.0.3729.108";
-        private const string internetDownloadManager = "Internet Download Manager 6.33.3";
-        private const string mozillaFirefox = "Mozilla Firefox 69 Beta 8";
-        private const string netLimiter = "NetLimiter 4.0.49";
-        private const string torBrowser = "Tor Browser 8.5.3";
-        private const string uTorrent = "uTorrent 3.5.5.45311";
+        private static string adobeFlashPlayer = Constants.AdobeFlashPlayer;
+        private static string betterNetVPN = Constants.BetterNetVPN;
+        private static string googleChrome = Constants.GoogleChrome;
+        private static string internetDownloadManager = Constants.InternetDownloadManager;
+        private static string mozillaFirefox = Constants.MozillaFirefox;
+        private static string netLimiter = Constants.NetLimiter;
+        private static string torBrowser = Constants.TorBrowser;
+        private static string uTorrent = Constants.UTorrent;
 
         public InternetUC()
         {

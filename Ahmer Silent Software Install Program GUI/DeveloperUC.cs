@@ -7,12 +7,12 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
 {
     public partial class DeveloperUC : UserControl
     {
-        private const string androidStudio = "Android Studio 183.5692245";
-        private const string git = "Git 2.21.0";
-        private const string gpg4Win = "GPG4Win 3.1.9";
-        private const string javaJDK12 = "Java JDK 12.0.2";
-        private const string javaJDK8 = "Java JDK 8 Update 221";
-        private const string python = "Python 3.7.4";
+        private static string androidStudio = Constants.AndroidStudio;
+        private static string git = Constants.Git;
+        private static string gpg4Win = Constants.GPG4Win;
+        private static string javaJDK12 = Constants.JavaJDK12;
+        private static string javaJDK8 = Constants.JavaJDK8;
+        private static string python = Constants.Python;
 
         public DeveloperUC()
         {
@@ -28,17 +28,7 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
 
         private void ButtonJavaJDK8_Click(object sender, EventArgs e)
         {
-            //JavaJDK8();            
-            string a = "D:\\Softwares\\K-Lite Mega Codec Pack 14.6.6.zip";
-            if (File.Exists(a))
-            {
-                MainProgram.GetSetShowProgramFile = a;
-                MainProgram.ProgressAsync("K-Lite Mega Codec Pack 14.6.5", "Setup.exe", null, null, false);
-            }
-            else
-            {
-                Constants.MessageBoxExceptionFileExist(a);
-            }
+            JavaJDK8();
         }
 
         private void ButtonJavaJDK12_Click(object sender, EventArgs e)

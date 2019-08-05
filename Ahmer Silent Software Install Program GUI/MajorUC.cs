@@ -6,11 +6,11 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
 {
     public partial class MajorUC : UserControl
     {
-        private const string adobeAcrobatProDC = "Adobe Acrobat Pro DC 2019.012.20035";
-        private const string adobeAcrobatReaderDC = "Adobe Acrobat Reader DC 2019.012.20035";
-        private const string adobePhotoshop = "Adobe Photoshop CC 2019 20.0.5.27259";
-        private const string corelDraw = "CorelDRAW Graphics Suite 2019 21.2.0.706";
-        private const string msDotNetFramework = "Microsoft .NET Framework 4.8";
+        private static string adobeAcrobatProDC = Constants.AdobeAcrobatProDC;
+        private static string adobeAcrobatReaderDC = Constants.AdobeAcrobatReaderDC;
+        private static string adobePhotoshop = Constants.AdobePhotoshop;
+        private static string corelDraw = Constants.CorelDraw;
+        private static string msDotNetFramework = Constants.MSDotNetFramework;
 
         public MajorUC()
         {
