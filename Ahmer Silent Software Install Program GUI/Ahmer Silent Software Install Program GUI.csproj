@@ -13,6 +13,19 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>True</UpdateAssemblyInfoVersion>
+    <AssemblyVersionSettings>MonthStamp.IncrementOnDemand.DayStamp.TimeStamp</AssemblyVersionSettings>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SemVer1</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>AssemblyFileVersion</InheritWinAppVersionFrom>
+    <AssemblyFileVersionSettings>MonthStamp.IncrementOnDemand.DayStamp.TimeStamp</AssemblyFileVersionSettings>
+    <AssemblyInfoVersionSettings>
+    </AssemblyInfoVersionSettings>
+    <AssemblyInfoVersionSemVerSettings>AssemblyFileVersion.IncrementWithAutoReset.None</AssemblyInfoVersionSemVerSettings>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +37,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationVersion>8.1.5.1346</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>

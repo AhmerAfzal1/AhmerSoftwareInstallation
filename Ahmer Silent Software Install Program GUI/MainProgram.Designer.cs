@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainProgram));
             this.panelLeftSide = new System.Windows.Forms.Panel();
+            this.labelVersion = new System.Windows.Forms.Label();
             this.buttonAhmer = new System.Windows.Forms.Button();
             this.buttonUtilities = new System.Windows.Forms.Button();
             this.buttonPDF = new System.Windows.Forms.Button();
@@ -62,6 +63,7 @@
             this.multimediaUC1 = new Ahmer_Silent_Software_Install_Program_GUI.MultimediaUC();
             this.pdfUC1 = new Ahmer_Silent_Software_Install_Program_GUI.PdfUC();
             this.utilitiesUC1 = new Ahmer_Silent_Software_Install_Program_GUI.UtilitiesUC();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelLeftSide.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelBottom.SuspendLayout();
@@ -72,6 +74,8 @@
             // 
             this.panelLeftSide.BackColor = System.Drawing.Color.DarkSalmon;
             this.panelLeftSide.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelLeftSide.Controls.Add(this.label1);
+            this.panelLeftSide.Controls.Add(this.labelVersion);
             this.panelLeftSide.Controls.Add(this.buttonAhmer);
             this.panelLeftSide.Controls.Add(this.buttonUtilities);
             this.panelLeftSide.Controls.Add(this.buttonPDF);
@@ -86,6 +90,17 @@
             this.panelLeftSide.Name = "panelLeftSide";
             this.panelLeftSide.Size = new System.Drawing.Size(200, 812);
             this.panelLeftSide.TabIndex = 0;
+            // 
+            // labelVersion
+            // 
+            this.labelVersion.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelVersion.ForeColor = System.Drawing.Color.Black;
+            this.labelVersion.Location = new System.Drawing.Point(91, 781);
+            this.labelVersion.Name = "labelVersion";
+            this.labelVersion.Size = new System.Drawing.Size(101, 17);
+            this.labelVersion.TabIndex = 9;
+            this.labelVersion.Text = "label1";
+            this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonAhmer
             // 
@@ -476,6 +491,18 @@
             this.utilitiesUC1.Size = new System.Drawing.Size(984, 527);
             this.utilitiesUC1.TabIndex = 11;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(33, 781);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Version:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainProgram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,6 +529,7 @@
             this.Name = "MainProgram";
             this.Text = "Ahmer\'s Automatically And Silently Softwares Installation Program GUI";
             this.panelLeftSide.ResumeLayout(false);
+            this.panelLeftSide.PerformLayout();
             this.panelTop.ResumeLayout(false);
             this.panelBottom.ResumeLayout(false);
             this.panelBottom.PerformLayout();
@@ -545,6 +573,8 @@
         private MultimediaUC multimediaUC1;
         private PdfUC pdfUC1;
         private UtilitiesUC utilitiesUC1;
+        public System.Windows.Forms.Label labelVersion;
+        public System.Windows.Forms.Label label1;
     }
 }
 

@@ -23,7 +23,7 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
         private const string titlePDF = "PDF Softwares";
         private const string titleUtilities = "Utilities Softwares";
 
-        private event EventHandler extractBackgroundWorkFinished = null;
+        private event EventHandler ExtractBackgroundWorkFinished = null;
         private static BackgroundWorker extractBackgroundWorker = null;
         private static BackgroundWorker installBackgroundWorker = null;
         private static bool portable = false;
@@ -70,13 +70,23 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             extractBackgroundWorker.ProgressChanged += ExtractFile_ProgressChanged;
             extractBackgroundWorker.RunWorkerCompleted += ExtractFile_RunWorkerCompleted;
             extractBackgroundWorker.WorkerReportsProgress = true;
-            extractBackgroundWorkFinished += MainProgram_extractBackgroundWorkFinished;
+            ExtractBackgroundWorkFinished += MainProgram_extractBackgroundWorkFinished;
 
             installBackgroundWorker = new BackgroundWorker();
             installBackgroundWorker.DoWork += InstallBackgroundWorker_DoWork;
             installBackgroundWorker.ProgressChanged += InstallBackgroundWorker_ProgressChanged;
             installBackgroundWorker.RunWorkerCompleted += InstallBackgroundWorker_RunWorkerCompleted;
             installBackgroundWorker.WorkerReportsProgress = true;
+
+            /* 
+             * To show version download first Visual Studio Package
+             * https://marketplace.visualstudio.com/_apis/public/gallery/publishers/PrecisionInfinity/vsextensions/AutomaticVersions/2.0.48/vspackage
+             * Visit website for more info
+             * https://marketplace.visualstudio.com/items?itemName=PrecisionInfinity.AutomaticVersions
+            */
+            var assemblyLocation = Assembly.GetExecutingAssembly().Location;
+            var version = FileVersionInfo.GetVersionInfo(assemblyLocation).FileVersion;
+            labelVersion.Text = version;
         }
 
         private void ButtonAutoInstall_Click(object sender, EventArgs e)
@@ -162,9 +172,9 @@ namespace Ahmer_Silent_Software_Install_Program_GUI
             progressBarIndividual.Value = int.MaxValue;
             progressBarTotal.Value = int.MaxValue;
             Thread.Sleep(1000);
-            if (this.extractBackgroundWorkFinished != null)
+            if (ExtractBackgroundWorkFinished != null)
             {
-                this.extractBackgroundWorkFinished(this, EventArgs.Empty);
+                ExtractBackgroundWorkFinished(this, EventArgs.Empty);
             }
 
             //Constants.MessageBoxInformation("Extraction completed!");
