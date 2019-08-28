@@ -88,15 +88,24 @@ namespace Ahmer_Software_Installation
 
         private void ButtonAutoInstall_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("Do you want to install " + titleAutoInstall, "Please Confirm Your Action", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             labelSoftwareCategory.Text = titleAutoInstall;
-            DeveloperUC.JavaJDK8();
-            DeveloperUC.Git();
-            InternetUC.IDM();
-            InternetUC.Firefox();
-            MultimediaUC.KLiteMegaCodecPack();
-            UtilitiesUC.CCleaner();
-            UtilitiesUC.NotepadPlusPlus();
-            UtilitiesUC.WinRAR();
+            switch (dialogResult)
+            {
+                case DialogResult.Yes:
+                    DeveloperUC.JavaJDK8();
+                    DeveloperUC.Git();
+                    InternetUC.IDM();
+                    InternetUC.Firefox();
+                    MultimediaUC.KLiteMegaCodecPack();
+                    UtilitiesUC.CCleaner();
+                    UtilitiesUC.NotepadPlusPlus();
+                    UtilitiesUC.WinRAR();
+                    break;
+
+                case DialogResult.No:
+                    break;
+            }
         }
         private void ButtonDeveloper_Click(object sender, EventArgs e)
         {
