@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -25,7 +27,6 @@ namespace Ahmer_Software_Installation
 
         private event EventHandler ExtractBackgroundWorkFinished = null;
         private static BackgroundWorker extractBackgroundWorker = null;
-        private static BackgroundWorker installBackgroundWorker = null;
         private static bool portable = false;
         private static Label programFileLabel = null;
         private static Label tempFolderLabel = null;
@@ -62,6 +63,8 @@ namespace Ahmer_Software_Installation
             programFileLabel = labelShowProgramFile;
             GetSetShowShowDestination = null;
 
+            queue = new BackgroundQueue();
+
             progressBarIndividual.Maximum = int.MaxValue;
             progressBarTotal.Maximum = int.MaxValue;
 
@@ -71,12 +74,6 @@ namespace Ahmer_Software_Installation
             extractBackgroundWorker.RunWorkerCompleted += ExtractFile_RunWorkerCompleted;
             extractBackgroundWorker.WorkerReportsProgress = true;
             ExtractBackgroundWorkFinished += MainProgram_extractBackgroundWorkFinished;
-
-            installBackgroundWorker = new BackgroundWorker();
-            installBackgroundWorker.DoWork += InstallBackgroundWorker_DoWork;
-            installBackgroundWorker.ProgressChanged += InstallBackgroundWorker_ProgressChanged;
-            installBackgroundWorker.RunWorkerCompleted += InstallBackgroundWorker_RunWorkerCompleted;
-            installBackgroundWorker.WorkerReportsProgress = true;
 
             /* 
              * To show version download first Visual Studio Package
@@ -165,7 +162,30 @@ namespace Ahmer_Software_Installation
 
         private void MainProgram_extractBackgroundWorkFinished(object sender, EventArgs e)
         {
-            installBackgroundWorker.RunWorkerAsync();
+            var workerQueue = new Queue<CustomWorker>();
+            CustomWorker.QueueWorker(workerQueue,
+                sender,
+                (x, a) =>
+                {
+                    InstallProgram();
+                    //// some custom do work logic.
+                },
+                (x, b) =>
+                {
+                    Constants.MessageBoxInformation("Installed");
+                    //// some custom completed logic.
+                },
+                (c) =>
+                {
+                    Constants.MessageBoxException("Error in Install Program");
+                    //// some custom display error logic.
+                },
+                (x, f) =>
+                {
+                    //// Progress change logic.
+                    //this.ProgressValue = e.ProgressPercentage;
+                    //this.Status = e.UserState.ToString();
+                });
         }
 
         private void ExtractFile_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -267,51 +287,42 @@ namespace Ahmer_Software_Installation
             }
         }
 
-        private void InstallBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            Constants.MessageBoxInformation("Installation completed!");
-        }
-
-        private void InstallBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void InstallBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        private void InstallProgram()
         {
             string makeNewPath = tempfolder + nameSoftware + "\\" + exeSoftware;
-
-            try
             {
-                using (Process exeFile = new Process())
+                try
                 {
-                    exeFile.StartInfo.FileName = makeNewPath;
-                    exeFile.StartInfo.Arguments = exeArguments;
-                    exeFile.StartInfo.Verb = "runas";
-                    exeFile.StartInfo.UseShellExecute = true;
-                    exeFile.Start();
-                    exeFile.WaitForExit();
+                    using (Process exeFile = new Process())
+                    {
+                        exeFile.StartInfo.FileName = makeNewPath;
+                        exeFile.StartInfo.Arguments = exeArguments;
+                        exeFile.StartInfo.Verb = "runas";
+                        exeFile.StartInfo.UseShellExecute = true;
+                        exeFile.Start();
+                        exeFile.WaitForExit();
+                    }
                 }
-            }
-            catch (InvalidOperationException i)
-            {
-                Constants.MessageBoxException("InvalidOperationException: " + i.Message);
-            }
-            catch (ArgumentNullException a)
-            {
-                Constants.MessageBoxException("ArgumentNullException: " + a.Message);
-            }
-            catch (PlatformNotSupportedException p)
-            {
-                Constants.MessageBoxException("PlatformNotSupportedException: " + p.Message);
-            }
-            catch (FileNotFoundException f)
-            {
-                Constants.MessageBoxException("FileNotFoundException: " + f.Message);
-            }
-            catch (Win32Exception ex)
-            {
-                Constants.MessageBoxException("Win32Exception: " + ex.Message);
+                catch (InvalidOperationException i)
+                {
+                    Constants.MessageBoxException("InvalidOperationException: " + i.Message);
+                }
+                catch (ArgumentNullException a)
+                {
+                    Constants.MessageBoxException("ArgumentNullException: " + a.Message);
+                }
+                catch (PlatformNotSupportedException p)
+                {
+                    Constants.MessageBoxException("PlatformNotSupportedException: " + p.Message);
+                }
+                catch (FileNotFoundException f)
+                {
+                    Constants.MessageBoxException("FileNotFoundException: " + f.Message);
+                }
+                catch (Win32Exception ex)
+                {
+                    Constants.MessageBoxException("Win32Exception: " + ex.Message);
+                }
             }
         }
 

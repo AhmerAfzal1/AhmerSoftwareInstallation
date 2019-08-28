@@ -118,6 +118,9 @@
     <Compile Include="AhmerUC.Designer.cs">
       <DependentUpon>AhmerUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomWorker.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Constants.cs" />
     <Compile Include="DeveloperUC.cs">
       <SubType>UserControl</SubType>
