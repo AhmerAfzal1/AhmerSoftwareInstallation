@@ -63,8 +63,6 @@ namespace Ahmer_Software_Installation
             programFileLabel = labelShowProgramFile;
             GetSetShowShowDestination = null;
 
-            queue = new BackgroundQueue();
-
             progressBarIndividual.Maximum = int.MaxValue;
             progressBarTotal.Maximum = int.MaxValue;
 
